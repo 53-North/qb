@@ -10,7 +10,7 @@ function Login() {
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
             </div>
-            <a href ="/UserSafe/" role="button" type="submit" class="btn btn-dark">log in </a> 
+            <a href ="/UserSafe/" role="button" type="submit" className="btn btn-dark login_button">log in </a> 
         </form>
         <footer>
             <p>don't have an account- <a href ="/UserReg/">sign up </a> </p>
