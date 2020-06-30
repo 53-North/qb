@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
 
-
 import './App.css';
 
 import NavBar from "./NavBar";
@@ -35,7 +34,7 @@ class App extends React.Component {
               <Route path="/UserSafe" component={UserSafe} />
               <Route path="/About" component={About} />
               <Route path="/Settings" component={Settings} />
-              <Route component={NotFound} />
+              <Route component={NotFound} /> 
               {/* NotFound HAS to be the last in the list as it always shows up */}
             </Switch>
           </div>
