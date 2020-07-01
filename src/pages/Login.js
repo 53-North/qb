@@ -7,7 +7,7 @@ function Login() {
             <h1>Quake°Beacon</h1>
             <form>
                 <div className=" form-group">
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" />
                     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
 
                     <div className="form-check">
