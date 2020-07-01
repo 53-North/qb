@@ -5,37 +5,37 @@ import NavBar from "../NavBar";
 
 function UserReg() {
     return (
-        
+
         <div className="UserReg">
-            
-        
+
+
             <h1 className="UserRegh1">Quake°Beacon</h1>
             <h4 className="UserRegh4">Register below .....</h4>
 
             <div className="row">
-                <div className="col-12 col-md-4 col-md-offset-2 form-group" align="center">
+                <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
                     <input type="name" class="form-control" id="exampleInputForName" placeholder="First Name" />
                 </div>
-                <div className="col-12 col-md-4 col-md-offset-2 form-group" align="center">
+                <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
                     <input type="name" class="form-control" id="exampleInputForName" placeholder="Surname" />
                 </div>
 
             </div>
             <div className="row">
-                <div className="col-12 col-md-4 form-group">
+                <div className="col-12 col-md-6 form-group">
                     <input type="email" className="form-control" id="email" placeholder="Email: name@example.com" />
                 </div>
-                <div className="col-12 col-md-4 form-group">
+                <div className="col-12 col-md-6 form-group">
                     <input type="phone" className="form-control" id="phone" placeholder="Phone: (+44)101 110 1010" />
                 </div>
             </div>
 
             <div className="row">
-                <div className="col-12 col-md-4 form-group">
+                <div className="col-12 col-md-6 form-group">
                     <input type="date" className="form-control" id="dob" placeholder="D.O.B" />
                 </div>
 
-                <div className="col-12 col-md-4 input-group mb-3">
+                <div className="col-12 col-md-6 input-group mb-3">
                     <div className="input-group-prepend">
                         <label className="input-group-text" for="inputGroupSelect01">Language</label>
                     </div>
@@ -115,7 +115,9 @@ function UserReg() {
                     </select>
                 </div>
 
-
+                <div className="text-center text-center">
+                    <button type="button" class="btn btn-dark">Register</button>
+                </div>
 
             </div>
             <p>already have an account? <a href="/">log in </a> </p>
