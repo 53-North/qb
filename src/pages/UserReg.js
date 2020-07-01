@@ -9,20 +9,21 @@ function UserReg() {
 
             <div className="row">
                 <div className="col-12 col-md-6 form-group">
-                <input type="name" class="form-control" id="exampleInputForName"  placeholder="First Name" />
+                    <input type="name" class="form-control" id="exampleInputForName" placeholder="First Name" />
                 </div>
                 <div className="col-12 col-md-6 form-group">
-                <input type="name" class="form-control" id="exampleInputForName"  placeholder="Surname" /> 
+                    <input type="name" class="form-control" id="exampleInputForName" placeholder="Surname" />
                 </div>
             </div>
             <div className="row">
                 <div className="col-12 col-md-6 form-group">
-                <input type="name" class="form-control" id="exampleInputForName"  placeholder="D.O.B" />
+                    <input type="name" class="form-control" id="exampleInputForName" placeholder="D.O.B" />
                 </div>
                 <div className="col-12 col-md-6 form-group">
-                //////language picker here
-                
-			
+                <select class="form-control bfh-languages" data-language="en"></select>
+                   
+
+
                 </div>
             </div>
             <p>already have an account? <a href="/">log in </a> </p>
