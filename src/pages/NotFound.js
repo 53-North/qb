@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './NotFound.css';
 import NavBar from "../NavBar";
+import logo from "./img/Error.jpg"
+// import { browserHistory } from 'react-router'
+
 
 function NotFound() {
 
     return (
         <div className="NotFound">
-            <div><NavBar/></div>
-            <h1>404: Yoo-hoo that page is not found, sorry!</h1>
-           
+            <img src={logo} alt="Logo" />;
+            <p>hit back</p>
         </div>
+
 
     );
 }

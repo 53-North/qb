@@ -99,7 +99,6 @@ function UserSafe() {
     return (
         <div className="UserSafe">
             <div><NavBar /></div>
-            <header><h1>Quake°Beacon</h1></header>
             <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location,
                 <strong>are you safe?</strong></p>
             <>
@@ -114,8 +113,6 @@ function UserSafe() {
                     onClose={handleClose}
                 />
             </>
-
-           
             <footer>
                 <Link to="/">Log out</Link>
             </footer>

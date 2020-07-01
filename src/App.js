@@ -24,27 +24,25 @@ class App extends React.Component {
 
   render() {
     return (
-     
+      
       <Router>
         <div className="App">
           <div id="page-body">
             {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
-            <div>
-              <Header/>
-            </div>
-
+            <div><Header /></div>
             <Switch>
-              <Route path="/" component={Login} exact />
+              <Route path="/" component={Login} exact /> 
               <Route path="/UserReg" component={UserReg} />
               <Route path="/UserSafe" component={UserSafe} />
               <Route path="/About" component={About} />
               <Route path="/Settings" component={Settings} />
               <Route path="/Test" component={Test} />
               <Route path="/Earthquake" component={Earthquake} />
-              <Route component={NotFound} /> 
+              <Route component={NotFound} />
 
               {/* NotFound HAS to be the last in the list as it always shows up */}
             </Switch>
+            
           </div>
         </div>
       </Router>
