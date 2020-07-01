@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './NotFound.css';
 import NavBar from "../NavBar";
 import logo from "./img/Error.jpg"
-// import { browserHistory } from 'react-router'
+import { withRouter } from 'react-router-dom'
 
 
 function NotFound() {
@@ -11,12 +11,10 @@ function NotFound() {
         <div className="NotFound">
             <img src={logo} alt="Logo" />;
             <p>hit back</p>
+           );
         </div>
-
-
     );
 }
-
 
 
 export default NotFound;
