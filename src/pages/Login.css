@@ -1,3 +1,7 @@
+.full-login {
+    margin-top: 50px;
+}
+
 .login_button {
     background-color: cornflowerblue;
     margin-top: 20px;
@@ -8,6 +12,6 @@
 }
 
 .form-check {
-    text-align: left;
+    text-align: center;
     margin-top: 10px;
 }

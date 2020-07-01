@@ -4,8 +4,7 @@ import NavBar from "../NavBar";
 function Settings() {
     return (
 
-        <div className="ABout">
-            <div><NavBar /></div>
+        <div className="About">
             <h2>Change your details- do it here!</h2>
         </div>
 
