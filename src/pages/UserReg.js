@@ -1,10 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import './UserReg.css';
+import NavBar from "../NavBar";
 
 function UserReg() {
     return (
-
+        
         <div className="UserReg">
+            
+        
             <h1 className="UserRegh1">Quake°Beacon</h1>
             <h4 className="UserRegh4">Register below .....</h4>
 
