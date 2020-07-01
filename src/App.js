@@ -11,6 +11,7 @@ import UserSafe from "./pages/UserSafe";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Earthquake from "./pages/Earthquake";
 
 
 {/* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
@@ -34,6 +35,7 @@ class App extends React.Component {
               <Route path="/UserSafe" component={UserSafe} />
               <Route path="/About" component={About} />
               <Route path="/Settings" component={Settings} />
+              <Route path="/Earthquake" component={Earthquake} />
               <Route component={NotFound} /> 
               {/* NotFound HAS to be the last in the list as it always shows up */}
             </Switch>
