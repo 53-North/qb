@@ -4,7 +4,7 @@ import './Login.css';
 function Login() {
     return (
         <div className="full-login">
-            <h1>Quake°Beacon</h1>
+            <h4>Log in below:</h4>
             <form>
                 <div className=" form-group">
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" />
@@ -14,22 +14,19 @@ function Login() {
                         <input type="checkbox" className="form-check-input" id="dropdownCheck" />
                         <label className="form-check-label" for="dropdownCheck">
                             Remember me
-                </label>
+                        </label>
                     </div>
 
                 </div>
-                <a href="/UserSafe/" role="button" type="submit" className="btn btn-dark login_button">log in </a>
+                <a href="/UserSafe/"> log in </a>
             </form>
 
-
-
-
             <footer className="Login-footer">
-            <h6>don't have an account- <a href="/UserReg/">sign up </a> </h6>
+                <h6>don't have an account- <a href="/UserReg/">sign up </a> </h6>
                 <h6>forgotten password- <a href="/UserReg/">click here </a> </h6>
-       </footer>
+            </footer>
         </div>
-           
+
     );
 }
 

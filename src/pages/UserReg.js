@@ -5,11 +5,7 @@ import NavBar from "../NavBar";
 
 function UserReg() {
     return (
-        
         <div className="UserReg">
-            
-        
-            <h1 className="UserRegh1">Quake°Beacon</h1>
             <h4 className="UserRegh4">Register below .....</h4>
 
             <div className="row">
