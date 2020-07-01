@@ -1,5 +1,5 @@
 import React from 'react';
-import "/Users/mattmckinley/Desktop/qb-front-end-USE/src/pages/Header/Header.css";
+import "./Header.css";
 
 
 function Header() {

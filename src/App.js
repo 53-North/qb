@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
+
 import './App.css';
 import Header from "./pages/Header/Header"
 import NavBar from "./NavBar";
@@ -11,6 +12,7 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
+import Test from "./pages/Test";
 
 
 /* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
@@ -22,6 +24,7 @@ class App extends React.Component {
 
   render() {
     return (
+     
       <Router>
         <div className="App">
           <div id="page-body">
@@ -29,18 +32,14 @@ class App extends React.Component {
             <div>
               <Header/>
             </div>
-            <div>
-              <NavBar/>
-            </div>
+
             <Switch>
               <Route path="/" component={Login} exact />
               <Route path="/UserReg" component={UserReg} />
               <Route path="/UserSafe" component={UserSafe} />
               <Route path="/About" component={About} />
               <Route path="/Settings" component={Settings} />
-
-            
-
+              <Route path="/Test" component={Test} />
               <Route path="/Earthquake" component={Earthquake} />
               <Route component={NotFound} /> 
 
