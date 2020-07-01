@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
+import './UserSafe.css';
 
 
 function UserSafe() {
@@ -95,9 +97,13 @@ function humanTest() {
 
         <div className="UserSafe">
             <header><h1>Quake°Beacon</h1></header>
-            <p>An earthquake has happened and the epicentre is XXXPROPS in here XXX from your location, <strong>are you safe?</strong></p>
-            <a href ="/UserSafe/" role="button" type="submit" className="btn btn-danger btn-xlg" onClick = {() => markSafe()}>I AM SAFE </a> 
+            <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location, <strong>are you safe?</strong></p>
+            <a href="/UserSafe/" role="button" type="submit" class="btn btn-danger btn-xl">I AM SAFE </a>
+            <footer>
+                <Link to="/">Log out</Link>
+        </footer>
         </div>
+        
 
     );
 }
