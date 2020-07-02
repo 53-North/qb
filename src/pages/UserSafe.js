@@ -28,9 +28,7 @@ function UserSafe() {
     }, []);
 
     function markSafe(id) {
-
         id = 1; // this line needs to be removed when we get the app using different users
-
         pressed = true;
         console.log('clicked mark safe button');
         // const updatedUsers = users.map( user => {
@@ -39,11 +37,9 @@ function UserSafe() {
         //     }
         //     return user;
         // });
-
         //const updatedUser = 1;
         // const updatedUser = users.filter(user => user.userId === id);
         // console.log(updatedUser);
-
         thisUser.user_markedSafe = 1;
         console.log(thisUser);
 
@@ -55,7 +51,6 @@ function UserSafe() {
                 // There is probably no data returned from a Put request.
                 // But if you're in the "then" function you know the request succeeded.
                 console.log(id + ' marked safe');
-
             })
             .catch(err => {
                 console.log("Error marking " + id + " safe", err);
@@ -96,7 +91,8 @@ function UserSafe() {
 
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
-        console.log("You closed Alert!");
+        console.log("You tots closed that ALERT man!");
+        
         return setShowAlert(false);
     }
 
@@ -114,8 +110,7 @@ function UserSafe() {
                 <Bootbox show={showAlert}
                     type={"alert"}
                     message={"Thank you, we are delighted to inform you that you are marked as SAFE on our system.  Should your situation change, please call the EMERGENCY SERVICES"}
-                    onClose={handleClose}
-                />
+                    onClose={handleClose}/>
             </>
             <footer>
                 <Link to="/">Log out</Link>
