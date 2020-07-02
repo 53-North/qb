@@ -9,29 +9,18 @@ import Bootbox from 'bootbox-react';
 
 function UserSafe() {
     let thisUser;
-<<<<<<< HEAD
     let pressed = false;
 
-=======
->>>>>>> e2dc4f8280b774f9dfb370c5d0a03e2cb4539e56
     //const [thisUser, setUser] = useState([]);
     useEffect(() => {
         axios
             .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
             .then(res => {
-<<<<<<< HEAD
-            //console.log(res.data);
-            //setUser(res.data.user[0]);
-            thisUser = res.data.user[0];
-            //console.log(thisUser);
-            //console.log(setUser);
-=======
                 //console.log(res.data);
                 //setUser(res.data.user[0]);
                 thisUser = res.data.user[0];
                 console.log(thisUser);
                 //console.log(setUser);
->>>>>>> e2dc4f8280b774f9dfb370c5d0a03e2cb4539e56
             })
             .catch(err => {
                 console.log("Could not fetch users", err);
