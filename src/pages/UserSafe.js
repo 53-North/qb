@@ -3,9 +3,11 @@ import axios from 'axios';
 import { render } from 'react-dom';
 
 
+
 function UserSafe() {
 
     let thisUser;
+    let pressed = false;
 
     //const [thisUser, setUser] = useState([]);
 
@@ -16,7 +18,7 @@ function UserSafe() {
             //console.log(res.data);
             //setUser(res.data.user[0]);
             thisUser = res.data.user[0];
-            console.log(thisUser);
+            //console.log(thisUser);
             //console.log(setUser);
             })
             .catch(err => {
@@ -28,6 +30,7 @@ function UserSafe() {
 
         id = 1; // this line needs to be removed when we get the app using different users
 
+        pressed = true;
         console.log('clicked mark safe button');
         // const updatedUsers = users.map( user => {
         //     if ( user.userId === id) {
@@ -91,14 +94,23 @@ function humanTest() {
 }
 */
 
-    return (
+    function displayButton() {
+        console.log(pressed);
+        if (thisUser.user_markedSafe === 1) {
+            return <a href ="/UserSafe/" role="button" type="submit" className="btn btn-danger btn-xlg" onClick = {() => markSafe()}>I AM SAFE </a>;
+        }
+        else {
+            return <p>Safety Confirmed!</p>;
+        }
+    }
 
+
+    return (
         <div className="UserSafe">
             <header><h1>Quake°Beacon</h1></header>
             <p>An earthquake has happened and the epicentre is XXXPROPS in here XXX from your location, <strong>are you safe?</strong></p>
-            <a href ="/UserSafe/" role="button" type="submit" className="btn btn-danger btn-xlg" onClick = {() => markSafe()}>I AM SAFE </a> 
+            {displayButton()}
         </div>
-
     );
 }
 
