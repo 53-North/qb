@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import './UserReg.css';
-import NavBar from "../NavBar";
 
 function UserReg() {
     return (
 
         <div className="UserReg">
             <div className="UserReg">
-                <h4 className="UserRegh4">Register below .....</h4>
+                <h4 className="UserRegh4">Register below ...</h4>
 
                 <div className="row">
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
