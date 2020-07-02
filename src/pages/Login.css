@@ -1,3 +1,7 @@
+.full-login {
+    margin-top: 50px;
+}
+
 .login_button {
     background-color: cornflowerblue;
     margin-top: 20px;
@@ -5,4 +9,9 @@
 
 .Login-footer {
     text-align: center;
+}
+
+.form-check {
+    text-align: center;
+    margin-top: 10px;
 }
