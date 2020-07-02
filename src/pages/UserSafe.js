@@ -8,7 +8,6 @@ import Bootbox from 'bootbox-react';
 
 function UserSafe() {
     let thisUser;
-    let pressed = false;
 
     //const [thisUser, setUser] = useState([]);
     useEffect(() => {
@@ -28,7 +27,6 @@ function UserSafe() {
 
     function markSafe(id) {
         id = 1; // this line needs to be removed when we get the app using different users
-        pressed = true;
         console.log('clicked mark safe button');
         // const updatedUsers = users.map( user => {
         //     if ( user.userId === id) {
@@ -95,13 +93,19 @@ function UserSafe() {
         return setShowAlert(false);
     }
 
+    function buttonPressed() {
+        console.log('button pressed');
+        setShowAlert(true);
+        markSafe();
+    }
+
     return (
         <div className="UserSafe">
             <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location,
                 <strong>are you safe?</strong></p>
             <>
                 <button 
-                onClick={() => setShowAlert(true)}
+                onClick={() => buttonPressed()}
                 className="btn btn-danger btn-xl"
                 > I AM SAFE </button>
 
