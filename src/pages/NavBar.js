@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import { ReactComponent as QBLogo } from "/Users/mattmckinley/Desktop/qb-front-end-USE/src/pages/img/qb_logo.svg";
+import { ReactComponent as QBLogo } from "./img/qb_logo.svg";
 
 function NavBar() {
     return (
