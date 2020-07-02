@@ -1,18 +1,14 @@
 import React from 'react';
-import NavBar from "../NavBar";
-import logo from "./img/HomepageV.jpg"
+import QuakeMap from "./img/HomepageV.jpg";
 
 
 function About() {
     return (
 
-        <div className="ABout">
-            <div><NavBar /></div>
+        <div className="About">
             <h2>What is this ap actually for</h2>
-            <img src={logo} alt="Logo" />;
-
+            <img src={QuakeMap} alt="Earthquake radius map" />
         </div>
-
     );
 }
 

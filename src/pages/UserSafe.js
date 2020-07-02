@@ -3,7 +3,6 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import './UserSafe.css';
-import NavBar from "../NavBar";
 import Bootbox from 'bootbox-react';
 
 function UserSafe() {
@@ -98,7 +97,6 @@ function UserSafe() {
 
     return (
         <div className="UserSafe">
-            <div><NavBar /></div>
             <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location,
                 <strong>are you safe?</strong></p>
             <>
