@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import './NotFound.css';
+import NavBar from "../NavBar";
+import logo from "./img/Error.jpg"
+import { withRouter } from 'react-router-dom'
 
 
 function NotFound() {
+
     return (
-
         <div className="NotFound">
-            <h1>404: Yoo-hoo that page is not found, sorry!</h1>
+            <img src={logo} alt="Logo" />;
+            <p>hit back</p>
+           );
         </div>
-
     );
 }
-
 
 
 export default NotFound;
