@@ -5,6 +5,9 @@ import './Login.css';
 
 function Login() {
 
+    function logInClick() {
+        window.open("/UserSafe/");
+    }
 
     return (
         <div className="full-login">
@@ -22,7 +25,10 @@ function Login() {
                     </div>
 
                 </div>
-                <a href="/UserSafe/"> log in </a>
+                 
+                <button
+                onClick={logInClick}
+                className="login_btn btn btn-danger btn-xl"> LOG IN </button>
             </form>
 
             <footer className="Login-footer">
