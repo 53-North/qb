@@ -101,8 +101,8 @@ function UserSafe() {
 
     return (
         <div className="UserSafe">
-            <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location,
-                <strong>are you safe?</strong></p>
+            <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location
+                <strong> are you safe?</strong></p>
             <>
                 <button 
                 onClick={() => buttonPressed()}
