@@ -8,7 +8,12 @@
     margin-bottom: 30px;
 }
 
-.form-control {
-    
-    
+.Utext-center {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.row {
+    margin: 0px 25px ;
 }
