@@ -3,11 +3,13 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import './UserSafe.css';
-import NavBar from "../NavBar";
 import Bootbox from 'bootbox-react';
+
 
 function UserSafe() {
     let thisUser;
+    let pressed = false;
+
     //const [thisUser, setUser] = useState([]);
     useEffect(() => {
         axios
@@ -25,9 +27,8 @@ function UserSafe() {
     }, []);
 
     function markSafe(id) {
-
         id = 1; // this line needs to be removed when we get the app using different users
-
+        pressed = true;
         console.log('clicked mark safe button');
         // const updatedUsers = users.map( user => {
         //     if ( user.userId === id) {
@@ -35,11 +36,9 @@ function UserSafe() {
         //     }
         //     return user;
         // });
-
         //const updatedUser = 1;
         // const updatedUser = users.filter(user => user.userId === id);
         // console.log(updatedUser);
-
         thisUser.user_markedSafe = 1;
         console.log(thisUser);
 
@@ -51,7 +50,6 @@ function UserSafe() {
                 // There is probably no data returned from a Put request.
                 // But if you're in the "then" function you know the request succeeded.
                 console.log(id + ' marked safe');
-
             })
             .catch(err => {
                 console.log("Error marking " + id + " safe", err);
@@ -92,13 +90,13 @@ function UserSafe() {
 
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
-        console.log("You closed Alert!");
+        console.log("You tots closed that ALERT man!");
+        
         return setShowAlert(false);
     }
 
     return (
         <div className="UserSafe">
-            <div><NavBar /></div>
             <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location,
                 <strong>are you safe?</strong></p>
             <>
@@ -110,8 +108,7 @@ function UserSafe() {
                 <Bootbox show={showAlert}
                     type={"alert"}
                     message={"Thank you, we are delighted to inform you that you are marked as SAFE on our system.  Should your situation change, please call the EMERGENCY SERVICES"}
-                    onClose={handleClose}
-                />
+                    onClose={handleClose}/>
             </>
             <footer>
                 <Link to="/">Log out</Link>

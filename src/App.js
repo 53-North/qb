@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
-
 import './App.css';
-import Header from "./pages/Header/Header"
 import NavBar from "./NavBar";
 import Login from "./pages/Login";
 import UserReg from "./pages/UserReg";
@@ -29,7 +27,7 @@ class App extends React.Component {
         <div className="App">
           <div id="page-body">
             {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
-            <div><Header /></div>
+            <div><NavBar/></div>
             <Switch>
               <Route path="/" component={Login} exact /> 
               <Route path="/UserReg" component={UserReg} />
