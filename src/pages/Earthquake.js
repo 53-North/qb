@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import Bootbox from 'bootbox-react';
 
 
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
@@ -118,12 +119,18 @@ function Earthquake(props) {
         });
     }
     
-
+    const [showAlert, setShowAlert] = useState(false)
+    const handleClose = () => {
+        console.log("You tots closed that ALERT man!");
+        
+        return setShowAlert(false);
+    }
 
     function handleEarthquakeClick(){
         // props.triggerEarthquake()
         console.log("All users marked in danger")
         props.startQuake();
+        setShowAlert(true);
     }
 
 
@@ -133,6 +140,12 @@ function Earthquake(props) {
         <div className = "earthquake button">
             <h1>Press this button when there is an earthquake!</h1>
             <button onClick={ handleEarthquakeClick }>Press me!</button>
+
+            <Bootbox show={showAlert}
+                    type={"alert"}
+                    message={"An earthquake has been triggered. All users are marked as not safe."}
+                    onClose={handleClose}/>
+
         </div>
     )
 }
