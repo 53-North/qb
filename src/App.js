@@ -13,14 +13,16 @@ import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
 import Test from "./pages/Test";
 
+import UserStore from './stores/UserStore';
+import InputField from './pages/InputField';
+import SubmitButton from './pages/SubmitButton';
 
 /* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
 COMPONENT prop to specify the component we are interested in.
 Our / route would match every single route so we uses EXACT
 EXACT prop tells us that we are only interested in that specific component not anything with a / */
 
-function App () {
-
+function App() {
     // let thisUser;
     // useEffect(() => {
     //     axios
@@ -84,31 +86,31 @@ function App () {
     //     //setUser( thisUser );
     // }
 
-  return (
-      
-    <Router>
-      <div className="App">
-        <div id="page-body">
-          {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
-          <div><NavBar/></div>
-          <Switch>
-            <Route path="/" component={Login} exact /> 
-            <Route path="/UserReg" component={UserReg} />
-            <Route path="/UserSafe" component={UserSafe} /* render={props => (<UserSafe {...props} user={ users } /> ) } */ />
-            <Route path="/About" component={About} />
-            <Route path="/Settings" component={Settings} />
-            <Route path="/Test" component={Test} />
-            <Route path="/Earthquake" component={Earthquake} />
-            <Route component={NotFound} />
+    return (
+      <Router>
+        <div className="App">
+          <div id="page-body">
 
-            {/* NotFound HAS to be the last in the list as it always shows up */}
-          </Switch>
-            
+            {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
+            <div><NavBar /></div>
+            <Switch>
+              <Route path="/" component={Login} exact />
+              <Route path="/UserReg" component={UserReg} />
+              <Route path="/UserSafe" component={UserSafe} /* render={props => (<UserSafe {...props} user={ users } /> ) } */ />
+              <Route path="/About" component={About} />
+              <Route path="/Settings" component={Settings} />
+              <Route path="/Test" component={Test} />
+              <Route path="/Earthquake" component={Earthquake} />
+              <Route component={NotFound} />
+
+              {/* NotFound HAS to be the last in the list as it always shows up */}
+            </Switch>
+
+          </div>
         </div>
-      </div>
-    </Router>
-  );
-  
-}
+      </Router>
+    );
 
-export default App;
+  }
+
+  export default App;

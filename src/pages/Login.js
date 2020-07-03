@@ -1,8 +1,6 @@
 import React from 'react';
 import './Login.css';
 
-
-
 function Login() {
 
     function logInClick() {
@@ -10,7 +8,7 @@ function Login() {
     }
 
     return (
-        <div className="full-login">
+        <div className="loginForm">
             <h4>Log in below:</h4>
             <form>
                 <div className=" form-group">
