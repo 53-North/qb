@@ -21,68 +21,86 @@ EXACT prop tells us that we are only interested in that specific component not a
 
 function App () {
 
-    // let thisUser;
-    // useEffect(() => {
-    //     axios
-    //         .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
-    //         .then(res => {
-    //             //console.log(res.data);
-    //             //setUser(res.data.user);
-    //             thisUser = res.data.user[0]; // **
-    //             //console.log(thisUser);
-    //             // console.log(setUser);
-    //         })
-    //         .catch(err => {
-    //             console.log("Could not fetch users", err);
-    //         });
-    // }, []);
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        axios
+            .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
+            .then(res => {
+                setUsers(res.data.user);
+            })
+            .catch(err => {
+                console.log("Could not fetch users", err);
+            });
+    }, []);
 
-    // const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     axios
-    //         .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
-    //         .then(res => {
-    //             //console.log(res.data);
-    //             setUsers(res.data.user);
-    //             //users = res.data.user; // **
-    //             //console.log(thisUser);
-    //             //console.log(res.data.user);
-    //         })
-    //         .catch(err => {
-    //             console.log("Could not fetch users", err);
-    //         });
-    // }, []);
+    function startQuake() {
+        let id;
+        console.log('quake notification received');
+        const updatedUsers = users.map( user => {
+          //user.user_inDangerZone = 1;
+          user.user_markedSafe = 0;
+  
+            //id = 1;
 
-    // function markSafe(id) {
-    //     id = 1; // this line needs to be removed when we get the app using different users
-    //     console.log('clicked mark safe button');
-    //     const updatedUsers = setUsers.map( user => {
-    //         if ( user.userId === id) {
-    //             user.user_markedSafe = 1;
-    //         }
-    //         return user;
-    //     });
-    //     //const updatedUser = 1;
-    //     const updatedUser = setUsers.filter(user => user.userId === id);
-    //     // console.log(updatedUser);
-    //     //thisUser.user_markedSafe = 1;
-    //     //console.log(thisUser);
+            return user;
+        });
+ 
+        console.log(updatedUsers.length);
 
-    //     axios
-    //         .put(
-    //             `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, updatedUsers
-    //         )
-    //         .then(res => {
-    //             // There is probably no data returned from a Put request.
-    //             // But if you're in the "then" function you know the request succeeded.
-    //             console.log(id + ' marked safe');
-    //         })
-    //         .catch(err => {
-    //             console.log("Error marking " + id + " safe", err);
-    //         });
-    //     setUsers( updatedUsers );
-    //     //setUser( thisUser );
-    // }
+        for (let i = 0; i < updatedUsers.length; i++) {
+          axios
+              .put(
+                  `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${updatedUsers[i].userID}`, updatedUsers[i]
+              )
+              .then(res => {
+                  // There is probably no data returned from a Put request.
+                  // But if you're in the "then" function you know the request succeeded.
+                  console.log(updatedUsers[i].userID + ' marked in danger');
+                  console.log(updatedUsers[i].user_inDangerZone);
+
+              })
+              .catch(err => {
+                  console.log("Error marking " + updatedUsers[i].userID + " in danger", err);
+          });
+        }
+
+
+        //console.log( updatedUsers );
+        // console.log( updatedUser );
+
+        setUsers( updatedUsers );
+    }
+
+    function markSafe(id) {
+        id = 1; // this line needs to be removed when we get the app using different users
+        console.log('clicked mark safe button');
+        const updatedUsers = users.map( user => {
+            if ( user.userID === id) {
+                user.user_markedSafe = 1;
+            }
+            return user;
+        });
+ 
+        const updatedUser = users.filter(user => user.userID === id);
+
+        // console.log( updatedUsers );
+        // console.log( updatedUser );
+
+        axios
+            .put(
+                `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, updatedUsers[0]
+            )
+            .then(res => {
+                // There is probably no data returned from a Put request.
+                // But if you're in the "then" function you know the request succeeded.
+                console.log(id + ' marked safe');
+
+            })
+            .catch(err => {
+                console.log("Error marking " + id + " safe", err);
+            });
+        setUsers( updatedUsers );
+    }
 
   return (
       
@@ -94,11 +112,11 @@ function App () {
           <Switch>
             <Route path="/" component={Login} exact /> 
             <Route path="/UserReg" component={UserReg} />
-            <Route path="/UserSafe" component={UserSafe} /* render={props => (<UserSafe {...props} user={ users } /> ) } */ />
+            <Route path="/UserSafe" /*component={UserSafe}*/  render={props => (<UserSafe {...props} users={ users } markSafe = { markSafe } /> ) }  />
             <Route path="/About" component={About} />
             <Route path="/Settings" component={Settings} />
             <Route path="/Test" component={Test} />
-            <Route path="/Earthquake" component={Earthquake} />
+            <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={ users } startQuake = { startQuake } /> ) }  />
             <Route component={NotFound} />
 
             {/* NotFound HAS to be the last in the list as it always shows up */}
