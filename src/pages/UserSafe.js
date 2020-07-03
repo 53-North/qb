@@ -6,55 +6,14 @@ import './UserSafe.css';
 import Bootbox from 'bootbox-react';
 
 
-function UserSafe() {
-    let thisUser;
+function UserSafe(props) {
 
-    //const [thisUser, setUser] = useState([]);
-    useEffect(() => {
-        axios
-            .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
-            .then(res => {
-                //console.log(res.data);
-                //setUser(res.data.user[0]);
-                thisUser = res.data.user[0];
-                console.log(thisUser);
-                //console.log(setUser);
-            })
-            .catch(err => {
-                console.log("Could not fetch users", err);
-            });
-    }, []);
+console.log(props.users);
 
-    function markSafe(id) {
-        id = 1; // this line needs to be removed when we get the app using different users
-        console.log('clicked mark safe button');
-        // const updatedUsers = users.map( user => {
-        //     if ( user.userId === id) {
-        //         user.user_markedSafe = 1;
-        //     }
-        //     return user;
-        // });
-        //const updatedUser = 1;
-        // const updatedUser = users.filter(user => user.userId === id);
-        // console.log(updatedUser);
-        thisUser.user_markedSafe = 1;
-        console.log(thisUser);
+function handleMarkSafe() {
+    props.markSafe();
+}
 
-        axios
-            .put(
-                `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, thisUser
-            )
-            .then(res => {
-                // There is probably no data returned from a Put request.
-                // But if you're in the "then" function you know the request succeeded.
-                console.log(id + ' marked safe');
-            })
-            .catch(err => {
-                console.log("Error marking " + id + " safe", err);
-            });
-        //setUsers( updatedUsers );
-        //setUser( thisUser );
-    }
     /*
     function humanTest() {
         // When a user marks themselves safe they must complete a simple test
@@ -86,6 +45,7 @@ function UserSafe() {
     */
     // function handleButtonPress() { window.alert("Thank you we have now logged you as SAFE"); }  this makes an ugly pop up box
 
+
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
         console.log("You tots closed that ALERT man!");
@@ -96,7 +56,7 @@ function UserSafe() {
     function buttonPressed() {
         console.log('button pressed');
         setShowAlert(true);
-        markSafe();
+        handleMarkSafe();
     }
 
     return (
