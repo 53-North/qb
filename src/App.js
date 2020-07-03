@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
 import Test from "./pages/Test";
 
+// FONT FAMILY, font-family: 'Nunito', sans-serif;
 
 /* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
 COMPONENT prop to specify the component we are interested in.
