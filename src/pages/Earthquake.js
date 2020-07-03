@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import Bootbox from 'bootbox-react';
 
 
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
 
 
-function Earthquake() {
+function Earthquake(props) {
 
     function checkQuakeData() {
         let qData = {
@@ -98,27 +99,38 @@ function Earthquake() {
     }
 }
 
-    // user_inDangerZone = 1;
-    // user_markedSafe = 0;
+    
+    function markAllUsersInDanger() {
+        // user_inDangerZone = 1;
+        // user_markedSafe = 0;
+        
+        axios
+        .put(
+        `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
+        )
+        .then(res => {
+        // There is probably no data returned from a Put request.
+        // But if you're in the "then" function you know the request succeeded.
+        console.log("All users marked in danger zone");
 
-    // axios
-    // .put(
-    // `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
-    // )
-    // .then(res => {
-    // // There is probably no data returned from a Put request.
-    // // But if you're in the "then" function you know the request succeeded.
-    // console.log("All users marked in danger zone");
-
-    // })
-    // .catch(err => {
-    // console.log("Error marking users in danger zone", err);
-    // });
-
+        })
+        .catch(err => {
+        console.log("Error marking users in danger zone", err);
+        });
+    }
+    
+    const [showAlert, setShowAlert] = useState(false)
+    const handleClose = () => {
+        console.log("You tots closed that ALERT man!");
+        
+        return setShowAlert(false);
+    }
 
     function handleEarthquakeClick(){
         // props.triggerEarthquake()
         console.log("All users marked in danger")
+        props.startQuake();
+        setShowAlert(true);
     }
 
 
@@ -128,6 +140,12 @@ function Earthquake() {
         <div className = "earthquake button">
             <h1>Press this button when there is an earthquake!</h1>
             <button onClick={ handleEarthquakeClick }>Press me!</button>
+
+            <Bootbox show={showAlert}
+                    type={"alert"}
+                    message={"An earthquake has been triggered. All users are marked as not safe."}
+                    onClose={handleClose}/>
+
         </div>
     )
 }

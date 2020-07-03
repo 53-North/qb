@@ -1,5 +1,7 @@
-.loginForm {
-    margin-top: 50px;
+.full-login {
+    margin-top: 1em;
+    background-color: red;
+    border-radius: 20px;
 }
 
 .login_btn {
