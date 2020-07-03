@@ -98,22 +98,26 @@ function Earthquake(props) {
     }
 }
 
-    // user_inDangerZone = 1;
-    // user_markedSafe = 0;
+    
+    function markAllUsersInDanger() {
+        // user_inDangerZone = 1;
+        // user_markedSafe = 0;
+        
+        axios
+        .put(
+        `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
+        )
+        .then(res => {
+        // There is probably no data returned from a Put request.
+        // But if you're in the "then" function you know the request succeeded.
+        console.log("All users marked in danger zone");
 
-    // axios
-    // .put(
-    // `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
-    // )
-    // .then(res => {
-    // // There is probably no data returned from a Put request.
-    // // But if you're in the "then" function you know the request succeeded.
-    // console.log("All users marked in danger zone");
-
-    // })
-    // .catch(err => {
-    // console.log("Error marking users in danger zone", err);
-    // });
+        })
+        .catch(err => {
+        console.log("Error marking users in danger zone", err);
+        });
+    }
+    
 
 
     function handleEarthquakeClick(){
