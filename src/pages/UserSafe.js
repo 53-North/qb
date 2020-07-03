@@ -8,22 +8,11 @@ import Bootbox from 'bootbox-react';
 
 function UserSafe(props) {
 
-    //console.log(props);
-    // console.log(props.thisUser);
-    // let thisUser;
+console.log(props.users);
 
-    // //const [thisUser, setUser] = useState([]);
-    // useEffect(() => {
-    //     axios
-    //         .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
-    //         .then(res => {
-    //             thisUser = res.data.user[0];
-    //             console.log(thisUser);
-    //         })
-    //         .catch(err => {
-    //             console.log("Could not fetch users", err);
-    //         });
-    // }, []);
+function handleMarkSafe() {
+    props.markSafe();
+}
 
     /*
     function humanTest() {
@@ -56,48 +45,6 @@ function UserSafe(props) {
     */
     // function handleButtonPress() { window.alert("Thank you we have now logged you as SAFE"); }  this makes an ugly pop up box
 
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        axios
-            .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
-            .then(res => {
-                setUsers(res.data.user);
-            })
-            .catch(err => {
-                console.log("Could not fetch users", err);
-            });
-    }, []);
-
-    function markSafe(id) {
-        id = 1; // this line needs to be removed when we get the app using different users
-        console.log('clicked mark safe button');
-        const updatedUsers = users.map( user => {
-            if ( user.userID === id) {
-                user.user_markedSafe = 1;
-            }
-            return user;
-        });
- 
-        const updatedUser = users.filter(user => user.userID === id);
-
-        console.log( updatedUsers );
-        console.log( updatedUser );
-
-        axios
-            .put(
-                `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, updatedUser[0]
-            )
-            .then(res => {
-                // There is probably no data returned from a Put request.
-                // But if you're in the "then" function you know the request succeeded.
-                console.log(id + ' marked safe');
-
-            })
-            .catch(err => {
-                console.log("Error marking " + id + " safe", err);
-            });
-        setUsers( updatedUsers );
-    }
 
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
@@ -109,7 +56,7 @@ function UserSafe(props) {
     function buttonPressed() {
         console.log('button pressed');
         setShowAlert(true);
-        markSafe();
+        handleMarkSafe();
     }
 
     return (

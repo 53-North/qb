@@ -5,7 +5,7 @@ import axios from 'axios';
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
 
 
-function Earthquake() {
+function Earthquake(props) {
 
     function checkQuakeData() {
         let qData = {
@@ -119,6 +119,7 @@ function Earthquake() {
     function handleEarthquakeClick(){
         // props.triggerEarthquake()
         console.log("All users marked in danger")
+        props.startQuake();
     }
 
 
