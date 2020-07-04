@@ -121,17 +121,14 @@ function App() {
   }
 
   //holly playing with CALL CENTRE STATE
-  const [callCentreUsers, setCallCentreUsers] = useState([
-    { text: "Holly Alan", user_phone: "07171717171" },
-    { text: "Jeffery Vat", user_phone: "07171717172" },
-    { text: "Hoppity Rabbit", user_phone: "07188888172" }
-  ]);
-
-  const activeCalls = callCentreUsers.filter(calls => !calls.completed);
-  const completedCalls =callCentreUsers.filter(calls => calls.completed);
-
-
-
+  // const [callCentreUsers, setCallCentreUsers] = useState([
+  //   { text: "Holly Alan", user_phone: "07171717171", user_is_safe:"false" },
+  //   { text: "Jeffery Vat", user_phone: "07171717172", user_is_safe:"false"},
+  //   { text: "Hoppity Rabbit", user_phone: "07188888172", user_is_safe:"false"}
+  // ]);
+  // const activeCalls = user.filter(calls => !calls.user_markedSafe);
+  // const completedCalls = user.filter(calls => calls.user_markedSafe);
+  //end of call centre state bit
   return (
 
     <Router>
@@ -147,7 +144,7 @@ function App() {
             <Route path="/Settings" component={Settings} />
             <Route path="/Test" component={Test} />
             <Route path="/CallCentreScreen" render={props => (
-                    <CallCentreScreen text="Phylis Blythe" user_phone="07899999999"/>   
+              <CallCentreScreen text="Phylis Blythe" user_phone="07899999999" />
             )} />
             <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} startQuake={startQuake} />)} />
             <Route component={NotFound} />
