@@ -18,22 +18,22 @@ function CallCentreScreen(props) {
                 </div>
 
                 <div className="callCentreScreen-list">
-                    <div className="row callCentreScreen-deets col-4 col-md-4">
-                            <p className="call_username">{props.text}</p>
+                    <div className="row callCentreScreen-deets col-3 col-md-4">
+                            <p className="call_username">{props.user_firstName}</p>
                     </div>
 
-                    <div className="callCentreScreen-number col-4 col-md-4">
+                    <div className="callCentreScreen-number col-4 col-md-3">
                             <p className="call_userphone">{props.user_phone}</p>
                             {/* will be a concat of the first and second name */}
                     </div>
 
-                    <div className="form-check col-4 col-md-2">
+                    <div className="form-check col-4 col-md-4">
                         <input type="checkbox" className="form-check-input" id="dropdownCheck" />
                         <label className="form-check-label" for="dropdownCheck">User called- but not answered
                         </label>
                     </div>
                     <button
-                        className="btn btn-danger btn-xl col-12 col-md-2"> {props.user_is_safe} User Is Safe
+                        className="btn btn-danger btn-xl col-12 col-md-2"> {props.user_markedSafe} User Is Safe
                         </button>
                 </div>
 

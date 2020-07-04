@@ -20,8 +20,8 @@ function Login(props) {
                     Log in below:
                 </h3>
             </div>
+            
             <form>
-
                 <div className="form-group">
                     <div className="email-form">
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" />
@@ -29,7 +29,7 @@ function Login(props) {
                     <div className="password-form">
                         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                     </div>
-
+                </div>
                 <div className=" form-group">
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" onChange={ props.handleTextChange } value={ props.text } />
                     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
