@@ -65,11 +65,8 @@ function App () {
                   console.log("Error marking " + updatedUsers[i].userID + " in danger", err);
           });
         }
-
-
         //console.log( updatedUsers );
         // console.log( updatedUser );
-
         setUsers( updatedUsers );
     }
 
