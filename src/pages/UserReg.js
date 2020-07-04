@@ -7,8 +7,9 @@ function UserReg() {
 
         <div className="UserReg">
             <div className="UserReg">
-                <h4 className="UserRegh4">Register below ...</h4>
-
+                <div className="register-text">
+                    <h3>Register below ...</h3>
+                </div>
                 <div className="row">
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
                         <input type="name" class="form-control" id="exampleInputForName" placeholder="First Name" />
@@ -116,7 +117,9 @@ function UserReg() {
                         <button type="button" class="btn btn-dark">Register</button>
                 </div>
 
-                <p>already have an account? <a href="/">log in </a> </p>
+                <div className="register-footer">
+                    <h6>already have an account? <a href="/">log in </a> </h6>
+                </div>
             </div>
         </div>
     );

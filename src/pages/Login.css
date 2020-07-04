@@ -1,19 +1,45 @@
-.full-login {
-    margin-top: 1em;
-    background-color: red;
-    border-radius: 20px;
+.login-text {
+    font-family: 'Nunito', sans-serif;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    color: darkslategray;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
-.login_btn {
-    background-color: cornflowerblue;
-    margin-top: 20px;
+.email-form {
+    margin: 5px 5px 5px 5px;
 }
 
-.Login-footer {
+.password-form {
+    margin: 5px 5px 5px 5px;
+}
+
+.form-check-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9em;
+}
+
+.btn {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800 !important;
+    background-color: #f2cf43;
+    background-image: linear-gradient(315deg, #f2cf43 0%, #19a186 74%);
+    border: 0px !important;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-footer {
+    margin: 30px 0px 0px 0px;
     text-align: center;
 }
 
 .form-check {
     text-align: center;
-    margin-top: 10px;
+}
+
+h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300; 
 }

@@ -13,7 +13,7 @@ function NavBar() {
                         <QBLogo />
                     </Link>
                 </div>
-                <div className="logo-title">Quake°<br />Beacon</div>
+                <div className="logo-title">Quake°<br />Beacon<br /><div className="logo-tag"><h6>Are you safe?</h6></div></div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -29,7 +29,7 @@ function NavBar() {
                         </div>
                         <div className="nav-item nav-link">
                             <Link to="/Settings">
-                            <div className="nav-text">My Account</div>
+                            <div className="nav-text">Account</div>
                                 </Link>
                         </div>
                         <div className="nav-item nav-link">
