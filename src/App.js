@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
+import CallCentreScreen from "./pages/CallCentreScreen";
 import Test from "./pages/Test";
 
 // FONT FAMILY, font-family: 'Nunito', sans-serif;
@@ -117,6 +118,7 @@ function App () {
             <Route path="/About" component={About} />
             <Route path="/Settings" component={Settings} />
             <Route path="/Test" component={Test} />
+            <Route path="/CallCentreScreen" component={CallCentreScreen} />
             <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={ users } startQuake = { startQuake } /> ) }  />
             <Route component={NotFound} />
 
