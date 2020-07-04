@@ -34,6 +34,25 @@ function App () {
             });
     }, []);
 
+    // const myUsers = [
+    //   { myEmail: "helloupart@gmail.com", myUserId: 1 },
+    //   { myEmail: "joe@gmail.com", myUserId: 2}
+    // ]
+
+    function logInUser(text) {
+      //check the email address in the box is one in the database
+      //get all the email addresses in an array
+      //then loop through the array and check for a match
+      //if so...
+      for (let i = 0; i < users.length; i++){
+        if(users[i].user_email === text){
+          console.log(text + "valid email address")
+          // return true;
+        }
+      }
+
+    }
+
     function startQuake() {
         let id;
         console.log('quake notification received');
@@ -111,7 +130,7 @@ function App () {
           {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
           <div><NavBar/></div>
           <Switch>
-            <Route path="/" component={Login} exact /> 
+            <Route path="/Login" /*component={Login} exact*/ render={props => (<Login {...props} users={ users } logInUser = { logInUser } /> ) }  /> 
             <Route path="/UserReg" component={UserReg} />
             <Route path="/UserSafe" /*component={UserSafe}*/  render={props => (<UserSafe {...props} users={ users } markSafe = { markSafe } /> ) }  />
             <Route path="/About" component={About} />
