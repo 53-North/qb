@@ -1,10 +1,16 @@
 import React from 'react';
 import './Login.css';
 
-function Login() {
+function Login(props) {
 
     function logInClick() {
-        window.open("/UserSafe/");
+        //check the email address in the box is one in the database
+        //get all the email addresses in an array
+        //then loop through the array and check for a match
+        //if so...
+        props.logInUser(props.text);
+        
+        // window.open("/UserSafe/");
     }
 
     return (
@@ -15,6 +21,7 @@ function Login() {
                 </h3>
             </div>
             <form>
+
                 <div className="form-group">
                     <div className="email-form">
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" />
@@ -22,6 +29,11 @@ function Login() {
                     <div className="password-form">
                         <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                     </div>
+
+                <div className=" form-group">
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email: name@example.com" onChange={ props.handleTextChange } value={ props.text } />
+                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+
                     <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="dropdownCheck" />
                         <label className="form-check-label" for="dropdownCheck">
