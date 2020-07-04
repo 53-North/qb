@@ -45,13 +45,15 @@ function App() {
     //get all the email addresses in an array
     //then loop through the array and check for a match
     //if so...
+    // let idToUse =0;
     for (let i = 0; i < users.length; i++) {
       if (users[i].user_email === text) {
         console.log(text + "valid email address")
+        // idToUse+=(users[i].user_email);
         // return true;
       }
     }
-
+    // console.log(idToUse)
   }
 
   function startQuake() {
@@ -99,8 +101,7 @@ function App() {
       return user;
     });
 
-    const updatedUser = users.filter(user => user.userID === id);
-
+    const updatedUser = users && users.filter(user => user.userID === id);
     // console.log( updatedUsers );
     // console.log( updatedUser );
 
@@ -121,37 +122,56 @@ function App() {
   }
 
   //holly playing with CALL CENTRE STATE
+  // const activeCalls = users && users.filter(calls => !calls.user_markedSafe);
+  // const completedCalls = users && users.filter(calls => calls.user_markedSafe);
 
-  const activeCalls = users && users.filter(calls => !calls.user_markedSafe);
-  const completedCalls = users && users.filter(calls => calls.user_markedSafe);
+  function toCall() {
+  const resultToCalls = [];
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].user_markedSafe === 0) {
+      resultToCalls.push(users[i]);
+    }  
+  }
+  return(resultToCalls);
+}
+  // key={users.user_firstName}
+  // user_email={users.user_email}
+  // user_phone={users.user_phone}
+  // user_language={users.user_language}
+  // user_firstName={users.user_firstName}
+  // user_lastName={users.user_lastName}
+  // user_inDangerZone={users.user_inDangerZone}
+  // user_markedSafe={users.user_markedSafe}
+  // user_markedSafe={users.user_markedSafe}
+  // user_lat={users.user_lat}
+  // user_long={users.user_long}
+  // userId={users.userId}
+//end of call centre state bit
+return (
 
+  <Router>
+    <div className="App">
+      <div id="page-body">
+        {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
+        <div><NavBar /></div>
+        <Switch>
+          <Route path="/" /*component={Login} exact*/ render={props => (<Login {...props} users={users} logInUser={logInUser} />)} exact />
+          <Route path="/UserReg" component={UserReg} />
+          <Route path="/UserSafe" /*component={UserSafe}*/ render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
+          <Route path="/About" component={About} />
+          <Route path="/Settings" component={Settings} />
+          <Route path="/Test" component={Test} />
+          <Route path="/CallCentreScreen" render={props => (<CallCentreScreen {...props} users={users} toCall={toCall} />)} />
+          <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} startQuake={startQuake} />)} />
+          <Route component={NotFound} />
 
-  //end of call centre state bit
-  return (
+          {/* NotFound HAS to be the last in the list as it always shows up */}
+        </Switch>
 
-    <Router>
-      <div className="App">
-        <div id="page-body">
-          {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
-          <div><NavBar /></div>
-          <Switch>
-            <Route path="/Login" /*component={Login} exact*/ render={props => (<Login {...props} users={users} logInUser={logInUser} />)} />
-            <Route path="/UserReg" component={UserReg} />
-            <Route path="/UserSafe" /*component={UserSafe}*/ render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
-            <Route path="/About" component={About} />
-            <Route path="/Settings" component={Settings} />
-            <Route path="/Test" component={Test} />
-            <Route path="/CallCentreScreen" render={props => (<CallCentreScreen {...props} users={users}  />)} />
-            <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} startQuake={startQuake} />)} />
-            <Route component={NotFound} />
-
-            {/* NotFound HAS to be the last in the list as it always shows up */}
-          </Switch>
-
-        </div>
       </div>
-    </Router>
-  );
+    </div>
+  </Router>
+);
 
 }
 

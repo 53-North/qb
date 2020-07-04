@@ -10,7 +10,7 @@ function Login(props) {
         //if so...
         props.logInUser(props.text);
         
-        // window.open("/UserSafe/");
+        window.open("/UserSafe/");
     }
 
     return (
