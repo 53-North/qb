@@ -142,9 +142,9 @@ function Earthquake(props) {
             <button onClick={ handleEarthquakeClick }>Press me!</button>
 
             <Bootbox show={showAlert}
-                    type={"alert"}
-                    message={"An earthquake has been triggered. All users are marked as not safe."}
-                    onClose={handleClose}/>
+                type={"alert"}
+                message={"An earthquake has been triggered. All users are marked as not safe."}
+                onClose={handleClose}/>
 
         </div>
     )
