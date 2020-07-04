@@ -1,3 +1,13 @@
+.register-text {
+    font-family: 'Nunito', sans-serif;
+    margin: 20px 45px 20px 45px;
+    text-align: center;
+    color: darkslategray;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
 .UserRegh1 {
     text-align: center;
     margin-bottom: 20px;
@@ -16,4 +26,9 @@
 
 .row {
     margin: 0px 25px ;
+}
+
+.register-footer {
+    margin: 30px 0px 0px 0px;
+    text-align: center;
 }

@@ -1,46 +1,44 @@
-.about-background {
-    background-color: #21D4FD;
-    background-image: linear-gradient(45deg, #21D4FD 15%, #B721FF 100%);
-    border-radius: 20px;
-    margin-top: 10px;
-}
-
 .about-question {
     font-family: 'Nunito', sans-serif;
-    padding: 20px 0px 5px 0px;
+    margin: 20px 10px 20px 10px;
     text-align: center;
-    color: white;
+    color: darkslategray;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 .about-para {
     font-family: 'Nunito', sans-serif;
     padding: 0px 20px 10px 20px;
-    color: white;
+    color: black;
 }
 
 .about-question_2 {
     font-family: 'Nunito', sans-serif;
-    padding: 20px 0px 5px 0px;
+    margin: 20px 40px 20px 40px;
     text-align: center;
-    color: white;
+    color: darkslategray;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 .about-para_2 {
     font-family: 'Nunito', sans-serif;
     padding: 0px 20px 10px 20px;
-    color: white;
+    color: black;
 }
 
 p {
-    font-size: 0.9em;
-    font-weight: 600;
+    font-size: 0.8em;
+    font-weight: 300;
     line-height: 1.2em;
-    text-align: justify;
-    text-indent: 30px;
+    text-align: left;
 }
 
 h3 {
     font-size: 27px;
-    font-weight: 800;
+    font-weight: 700;
     margin: 0;
 }
