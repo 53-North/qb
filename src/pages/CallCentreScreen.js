@@ -8,11 +8,7 @@ function CallCentreScreen(props) {
     //         props.markSafe();
     //     }
 
-    const [callCentreUsers, setCallCentreUsers] = useState([
-        { text: "Holly Alan", user_phone: "07171717171" },
-        { text: "Jeffery Vat", user_phone: "07171717172" },
-        { text: "Hoppity Rabbit", user_phone: "07188888172" }
-    ]);
+    
 
     return (
 
@@ -26,18 +22,14 @@ function CallCentreScreen(props) {
 
                 <div className="callCentreScreen-list">
                     <div className="row callCentreScreen-deets">
-                        <div class Name="col-4 col-md-4">
-                            <div className={`callCentreScreen-deets ${props.modifier}`}>
-                                <p>{props.text}</p>
-                            </div>
+                        <div className="col-4 col-md-4">
+                                <p className ="call_username">{props.text}</p>
                         </div>
                     </div>
 
                     <div className="callCentreScreen-number">
                         <div class Name="col-4 col-md-4">
-                            <div className={`callCentreScreen-number ${props.modifier}`}>
-                                <p>{props.user_phone}</p>
-                            </div>
+                                <p className ="call_userphone">{props.user_phone}</p>
                             {/* will be a concat of the first and second name */}
                         </div>
                     </div>
