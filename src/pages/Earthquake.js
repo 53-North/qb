@@ -8,7 +8,7 @@ import './Earthquake.css';
 
 function Earthquake(props) {
     //usersInDanger is a new pieces of state which has been set to an EMPTY array
-    const [usersInDanger, setUsersInDanger] = useState([]) 
+    const [usersInDanger, setUsersInDanger] = useState([])
 
     function checkQuakeData() {
         let qData = {
@@ -170,59 +170,54 @@ function Earthquake(props) {
 
     return (
         <div>
-            <div className="earthquake button">
-                <h1>Press this button when there is an earthquake!</h1>
-                <button onClick={handleEarthquakeClick}>Press me!</button>
+            <div className="earthquake_button">
+                <h2>Potentially Unsafe Users</h2>
+                <button
+                    className="btn btn-danger btn-block"
+                    onClick={handleEarthquakeClick}>Press this button when there is an earthquake</button>
 
                 <Bootbox show={showAlert_earthquake}
                     type={"alert"}
                     message={"An earthquake has been triggered. All users are marked as not safe."}
                     onClose={handleClose} />
-
             </div>
 
             <div className="callCentreScreen-main">
                 <div className="callCentreScreen-background">
-                    <div className="callCentreScreen-header">
-                        <h4>
-                            Potentially UNSAFE Users
-                        </h4>
-                    </div>
                     <div>
 {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
-                        {usersInDanger.map(person => 
-                            <div className= "callCentreScreen-list" >
-                                <div className="row callCentreScreen-deets col-3 col-md-4">
-                                <p className="call_username">{person.user_firstName}</p>
+                        {usersInDanger.map(person =>
+                            <div className="callCentreScreen-list" >
+                                <div className="row callCenterList">
+                                    <div className="callCentreScreen-deets col-3">
+                                        {person.user_firstName}
+                                    </div>
+                                    <div className="callCentreScreen-phone col-4">
+                                        {person.user_phone}
+                                    </div>
+                                    <button
+                                        onClick={() => buttonPressed()}
+                                        className="btn btn-danger btn-xs col-5"
+                                    > USER IS SAFE
+                                    </button>
                                 </div>
-
-                                 <div className="callCentreScreen-number col-4 col-md-3">
-                                <p className="call_userphone">{person.user_phone}</p>
-
-                                </div>
-                                <button
-                                onClick={() => buttonPressed()}
-                                className="btn btn-danger btn-xl"
-                                > USER IS SAFE
-                                </button>
-
                                 <Bootbox show={showAlert_userSafe}
-                                type={"alert"}
-                                message={"You have marked a USER AS SAFE"}
-                                onClose={handleClose} />
+                                    type={"alert"}
+                                    message={"You have marked a USER AS SAFE"}
+                                    onClose={handleClose} />
                             </div>
                         )}
-                    
+
+
+                    </div>
+
+
+
+
 
                 </div>
-
-
-
-
-
             </div>
-        </div>
         </div >
     )
 }

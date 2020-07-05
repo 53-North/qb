@@ -70,7 +70,6 @@ function App() {
           // But if you're in the "then" function you know the request succeeded.
           console.log(updatedUsers[i].userID + ' marked in danger');
           console.log(updatedUsers[i].user_inDangerZone);
-
         })
         .catch(err => {
           console.log("Error marking " + updatedUsers[i].userID + " in danger", err);
@@ -103,14 +102,12 @@ function App() {
         // There is probably no data returned from a Put request.
         // But if you're in the "then" function you know the request succeeded.
         console.log(id + ' marked safe');
-
       })
       .catch(err => {
         console.log("Error marking " + id + " safe", err);
       });
     setUsers(updatedUsers);
   }
-
 return (
 /* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
 COMPONENT prop to specify the component we are interested in.
