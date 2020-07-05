@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Bootbox from 'bootbox-react';
-
+import './Earthquake.css';
 
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
-
+//also takes all the users who are marked as NOT safe and adds them to the call centre list
 
 function Earthquake(props) {
-    const [usersInDanger, setUsersInDanger] = useState([])
+    //usersInDanger is a new pieces of state which has been set to an EMPTY array
+    const [usersInDanger, setUsersInDanger] = useState([]) 
 
     function checkQuakeData() {
         let qData = {
@@ -103,11 +104,8 @@ function Earthquake(props) {
         }
     }
 
-
     function markAllUsersInDanger() {
-        // user_inDangerZone = 1;
-        // user_markedSafe = 0;
-
+        // user_inDangerZone = 1; user_markedSafe = 0;
         axios
             .put(
                 `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
@@ -126,10 +124,12 @@ function Earthquake(props) {
     const [showAlert_earthquake, setShowAlert_earthquake] = useState(false)
     // const handleClose = () => {
     //     console.log("You tots closed that ALERT man!");
-
     //     return setShowAlert(false);
     // }
 
+    //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
+    //It takes in the toCall function (which generates the list of unsafe users)
+    //and setShowAlert_earthquake functions (which is what is used to change the showAlert_earthquake state to make a pop up box)
     function handleEarthquakeClick() {
         // props.triggerEarthquake()
         console.log("All users marked in danger")
@@ -156,7 +156,8 @@ function Earthquake(props) {
         setShowAlert_userSafe(true);
         handleMarkSafe();
     }
-    //this is a function to find the users from the GET that are NOT safe and return an array of objects.
+    //this is a function to find the users from the GET that are NOT safe and return an array of objects called resultToCall.
+    //we then change the usersInDanger state by passing in this new array (resultToCall).
     const resultToCall = [];
     function toCall() {
         for (let i = 0; i < props.users.length; i++) {
@@ -188,6 +189,8 @@ function Earthquake(props) {
                         </h4>
                     </div>
                     <div>
+{/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
+we then make a map of the info in this state and return only the bits of the state required for this screen  */}
                         {usersInDanger.map(person => 
                             <div className= "callCentreScreen-list" >
                                 <div className="row callCentreScreen-deets col-3 col-md-4">

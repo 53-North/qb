@@ -11,16 +11,9 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
-import CallCentreScreen from "./pages/CallCentreScreen";
 import Test from "./pages/Test";
 
 // FONT FAMILY, font-family: 'Nunito', sans-serif;
-
-/* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
-COMPONENT prop to specify the component we are interested in.
-Our / route would match every single route so we uses EXACT
-EXACT prop tells us that we are only interested in that specific component not anything with a / */
-
 function App() {
 
   const [users, setUsers] = useState([]);
@@ -62,12 +55,9 @@ function App() {
     const updatedUsers = users.map(user => {
       //user.user_inDangerZone = 1;
       user.user_markedSafe = 0;
-
       //id = 1;
-
       return user;
     });
-
     console.log(updatedUsers.length);
 
     for (let i = 0; i < updatedUsers.length; i++) {
@@ -121,27 +111,14 @@ function App() {
     setUsers(updatedUsers);
   }
 
-  //holly playing with CALL CENTRE STATE
-  // const activeCalls = users && users.filter(calls => !calls.user_markedSafe);
-  // const completedCalls = users && users.filter(calls => calls.user_markedSafe);
-
- 
-
-
-  // key={users.userId}
-  // user_email={users.user_email}
-  // user_phone={users.user_phone}
-  // user_language={users.user_language}
-  // user_firstName={users.user_firstName}
-  // user_lastName={users.user_lastName}
-  // user_inDangerZone={users.user_inDangerZone}
-  // user_markedSafe={users.user_markedSafe}
-  // user_markedSafe={users.user_markedSafe}
-  // user_lat={users.user_lat}
-  // user_long={users.user_long}
-  // userId={users.userId}
-//end of call centre state bit
 return (
+/* ROUTER uses two make props.  PATH prop which specifies the URL where we want to render a given compnent. 
+COMPONENT prop to specify the component we are interested in.
+Our / route would match every single route so we uses EXACT
+EXACT prop tells us that we are only interested in that specific component not anything with a /
+In a route you render (show the page) by passing props into it from things outside of its component.
+If the function is WITHIN that component you do not need to pass it in as {notneeded}.
+ */
 
   <Router>
     <div className="App">
@@ -150,17 +127,19 @@ return (
         <div><NavBar /></div>
         <Switch>
           <Route path="/" /*component={Login} exact*/ render= {props => (<Login {...props} users={users} logInUser={logInUser} />)} exact />
-          <Route path="/UserReg" component={UserReg, CallCentreScreen} />
-          <Route path="/UserSafe" /*component={UserSafe}*/ render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
+          <Route path="/UserReg" component={UserReg} />
+          <Route path="/UserSafe" render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
           <Route path="/About" component={About} />
           <Route path="/Settings" component={Settings} />
-          <Route path="/CallCentreScreen" render={props => 
-                <div> 
-                  <CallCentreScreen/>
-                  <Earthquake/>
-                </div>}/>
           <Route path="/Test" component={Test}/>
-          <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} markSafe={markSafe} startQuake={startQuake} />)} />
+           {/* {...props} is saying go through all the props featured in the component.  
+           users={users} says to take all the key value pairs from that state USERS, which is the info from the database */}
+          <Route path="/Earthquake" render={props => (<Earthquake 
+              {...props} 
+              users={users} 
+              markSafe={markSafe} 
+              startQuake={startQuake} />
+              )} />
           <Route component={NotFound} />
 
           {/* NotFound HAS to be the last in the list as it always shows up */}
