@@ -125,16 +125,10 @@ function App() {
   // const activeCalls = users && users.filter(calls => !calls.user_markedSafe);
   // const completedCalls = users && users.filter(calls => calls.user_markedSafe);
 
-  function toCall() {
-  const resultToCalls = [];
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].user_markedSafe === 0) {
-      resultToCalls.push(users[i]);
-    }  
-  }
-  return(resultToCalls);
-}
-  // key={users.user_firstName}
+ 
+
+
+  // key={users.userId}
   // user_email={users.user_email}
   // user_phone={users.user_phone}
   // user_language={users.user_language}
@@ -155,14 +149,18 @@ return (
         {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
         <div><NavBar /></div>
         <Switch>
-          <Route path="/" /*component={Login} exact*/ render={props => (<Login {...props} users={users} logInUser={logInUser} />)} exact />
-          <Route path="/UserReg" component={UserReg} />
+          <Route path="/" /*component={Login} exact*/ render= {props => (<Login {...props} users={users} logInUser={logInUser} />)} exact />
+          <Route path="/UserReg" component={UserReg, CallCentreScreen} />
           <Route path="/UserSafe" /*component={UserSafe}*/ render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
           <Route path="/About" component={About} />
           <Route path="/Settings" component={Settings} />
-          <Route path="/Test" component={Test} />
-          <Route path="/CallCentreScreen" render={props => (<CallCentreScreen {...props} users={users} toCall={toCall} />)} />
-          <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} startQuake={startQuake} />)} />
+          <Route path="/CallCentreScreen" render={props => 
+                <div> 
+                  <CallCentreScreen/>
+                  <Earthquake/>
+                </div>}/>
+          <Route path="/Test" component={Test}/>
+          <Route path="/Earthquake" /*component={Earthquake}*/ render={props => (<Earthquake {...props} users={users} markSafe={markSafe} startQuake={startQuake} />)} />
           <Route component={NotFound} />
 
           {/* NotFound HAS to be the last in the list as it always shows up */}
