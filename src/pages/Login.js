@@ -48,13 +48,9 @@ function Login(props) {
         // .catch(err => {
         //     console.log("Could not fetch users", err);
         // });
-
         console.log(text)
         logInUser(text);
-
     }
-
-
 
     return (
         <div className="login-background">
