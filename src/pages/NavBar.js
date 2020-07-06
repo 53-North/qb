@@ -28,11 +28,6 @@ function NavBar() {
                                     </span>
                         </div>
                         <div className="nav-item nav-link">
-                            <Link to="/Settings">
-                            <div className="nav-text">Account</div>
-                                </Link>
-                        </div>
-                        <div className="nav-item nav-link">
                             <Link to="/">
                             <div className="nav-text">Login</div>
                                 </Link>
