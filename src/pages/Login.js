@@ -10,7 +10,7 @@ function Login(props) {
     function handleTextChange(event) {
         console.log(event.target.value);
         setText(event.target.value);
-      }
+    }
 
     const myUsers = [
         { myEmail: "helloupart@gmail.com", myUserId: 1 },
@@ -31,7 +31,7 @@ function Login(props) {
                 window.open("/UserSafe/");
             }
         }
-        
+
     }
 
     function logInClick(event) {
@@ -70,10 +70,7 @@ function Login(props) {
                     <h3>
                         Log in below:
                 </h3>
-            </div>
-
-            <form>
-
+                </div>
                 <div className=" form-group">
                     <input type="email"
                         className="form-control"
@@ -112,7 +109,6 @@ function Login(props) {
                                 </label>
                             </div>
                         </div>
-
                     </form>
                 </div>
 
