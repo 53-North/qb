@@ -120,6 +120,9 @@ function UserReg() {
                     </div>
                 </div>
                 <div className="text-center text-center">
+
+                    <button type="button" class="btn btn-dark">Register</button>
+
                     
 
                     <Link to="/About">
@@ -130,6 +133,7 @@ function UserReg() {
                         Register
                     </button>     
                     </Link>
+
 
                 </div>
                 <div className="register-footer">

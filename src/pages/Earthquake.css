@@ -1,3 +1,10 @@
+
+.earthquake-text {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    margin: 120px 10px 20px 10px;
+}
+
 .callCentreScreen-background {
     font-family: 'Nunito', sans-serif;
     margin: 20px 10px 20px 10px;
@@ -7,7 +14,7 @@
     border-radius: 10px;
 }
 
-    .earthquake_button {
+.earthquake_button {
     text-align: center;
     font-family: 'Nunito', sans-serif;
     margin: 20px 10px 20px 10px;
@@ -17,6 +24,7 @@
     border-radius: 10px;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .callCenterList {
     margin-top: 10px;

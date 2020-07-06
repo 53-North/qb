@@ -12,6 +12,8 @@ function Login(props) {
         setText(event.target.value);
     }
 
+
+
     const myUsers = [
         { myEmail: "helloupart@gmail.com", myUserId: 1 },
         { myEmail: "joe@gmail.com", myUserId: 2 }
@@ -52,6 +54,7 @@ function Login(props) {
         logInUser(text);
     }
 
+
     function Login() {
         // Need to try and get this to open with router instead?
         function logInClick() {
@@ -71,6 +74,12 @@ function Login(props) {
                         Log in below:
                 </h3>
                 </div>
+
+
+            </div>
+
+            <form>
+
                 <div className=" form-group">
                     <input type="email"
                         className="form-control"
@@ -92,6 +101,7 @@ function Login(props) {
                             Remember me
                         </label>
                     </div>
+
                 </div>
                 <div className="login-form-back">
                     <form>

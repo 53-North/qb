@@ -3,6 +3,7 @@ import axios from 'axios';
 import Bootbox from 'bootbox-react';
 import './Earthquake.css';
 
+
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
 //also takes all the users who are marked as NOT safe and adds them to the call centre list
 
@@ -51,11 +52,19 @@ function Earthquake(props) {
                         "magType": "mb",
                         "type": "earthquake",
                         "title": "M 5.0 - 41km WSW of Abapo, Bolivia"
+
                     },
                     "geometry": {
                         "type": "Point",
                         "coordinates": [-63.848399999999998, -18.9254, 37.719999999999999]
                     },
+
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [-63.848399999999998, -18.9254, 37.719999999999999]
+                    },
+
                     "id": "us7000ae2s"
                 },
                 { "type": "Feature", "properties": { "mag": 5, "place": "38km WSW of Abapo, Bolivia", "time": 1593407192469, "updated": 1593409249040, "tz": -240, "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ae33", "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000ae33&format=geojson", "felt": null, "cdi": null, "mmi": null, "alert": null, "status": "reviewed", "tsunami": 0, "sig": 385, "net": "us", "code": "7000ae33", "ids": ",us7000ae33,", "sources": ",us,", "types": ",geoserve,origin,phase-data,", "nst": null, "dmin": 4.9059999999999997, "rms": 1.2, "gap": 73, "magType": "mb", "type": "earthquake", "title": "M 5.0 - 38km WSW of Abapo, Bolivia" }, "geometry": { "type": "Point", "coordinates": [-63.807099999999998, -18.962599999999998, 35] }, "id": "us7000ae33" },
@@ -106,6 +115,16 @@ function Earthquake(props) {
 
     function markAllUsersInDanger() {
         // user_inDangerZone = 1; user_markedSafe = 0;
+
+
+    function markAllUsersInDanger() {
+        // user_inDangerZone = 1;
+        // user_markedSafe = 0;
+
+
+    function markAllUsersInDanger() {
+        // user_inDangerZone = 1; user_markedSafe = 0;
+
         axios
             .put(
                 `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
@@ -119,6 +138,17 @@ function Earthquake(props) {
             .catch(err => {
                 console.log("Error marking users in danger zone", err);
             });
+
+    }
+
+    const [showAlert, setShowAlert] = useState(false)
+    const handleClose = () => {
+        console.log("You tots closed that ALERT man!");
+
+        return setShowAlert(false);
+    }
+
+
     }
 
     const [showAlert_earthquake, setShowAlert_earthquake] = useState(false)
@@ -130,6 +160,7 @@ function Earthquake(props) {
     //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
     //It takes in the toCall function (which generates the list of unsafe users)
     //and setShowAlert_earthquake functions (which is what is used to change the showAlert_earthquake state to make a pop up box)
+
     function handleEarthquakeClick() {
         // props.triggerEarthquake()
         console.log("All users marked in danger")
@@ -143,6 +174,33 @@ function Earthquake(props) {
     function handleMarkSafe() {
         props.markSafe();
     }
+
+
+    return (
+        <div className="earhtquake-all">
+            <div className="earthquake-text">
+                <h3>Press this button when there is an earthquake!</h3>
+            </div>
+            <div className="earthquake-button text-center">
+                <button onClick={handleEarthquakeClick} type="button" className="btn btn-primary btn-xl">Press me!</button>
+            </div>
+            <div className="earthquake-alert">
+                <Bootbox show={showAlert}
+                    type={"alert"}
+                    message={"An earthquake has been triggered. All users are marked as not safe."}
+                    onClose={handleClose} />
+            </div>
+        <div className = "earthquake button">
+            <h1>Press this button when there is an earthquake!</h1>
+            <button onClick={ handleEarthquakeClick }>Press me!</button>
+        </div>
+            <Bootbox show={showAlert}
+                type={"alert"}
+                message={"An earthquake has been triggered. All users are marked as not safe."}
+                onClose={handleClose}/>
+
+        </div>
+    );
 
     const [showAlert_userSafe, setShowAlert_userSafe] = useState(false)
     const handleClose = () => {
