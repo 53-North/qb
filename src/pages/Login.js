@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import './Login.css';
 
 //cut out logInUser={logInUser} from router section of app.js
@@ -10,13 +11,15 @@ function Login(props) {
     function handleTextChange(event) {
         console.log(event.target.value);
         setText(event.target.value);
-      }
+    }
 
     const myUsers = [
         { myEmail: "helloupart@gmail.com", myUserId: 1 },
         { myEmail: "joe@gmail.com", myUserId: 2 }
     ]
     // const [users, setUsers] = useState([]);
+
+    const linkTRY = <Link to="/UserSafe"></Link>;
 
     function logInUser(text) {
         //check the email address in the box is one in the database
@@ -29,9 +32,9 @@ function Login(props) {
                 // console.log(users[i].phone);
                 console.log(text + " valid email address");
                 window.open("/UserSafe/");
-            }
+                // return <Link to="/UserSafe"></Link>;
+            }    
         }
-        
     }
 
     function logInClick(event) {
@@ -50,6 +53,7 @@ function Login(props) {
         // });
         console.log(text)
         logInUser(text);
+
     }
 
     return (
@@ -86,7 +90,13 @@ function Login(props) {
                 </div>
             </form>
             <div className="button-area text-center">
-                <button onClick={logInClick} type="button" className="btn btn-primary">Log in</button>
+                    <button
+                        onClick={logInClick}
+                        type="button"
+                        className="btn btn-primary">
+                        Log in
+                    </button>
+                
             </div>
 
             <div className="login-footer">
