@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Bootbox from 'bootbox-react';
 import './Earthquake.css';
-<<<<<<< HEAD
-
-=======
->>>>>>> 8dc1c2b3cf5c5d3207b3288358d3e626da113e44
 
 //when you press the button - sets user_inDangerZone to true AND user_markedSafe to false
 //also takes all the users who are marked as NOT safe and adds them to the call centre list
@@ -55,19 +51,11 @@ function Earthquake(props) {
                         "magType": "mb",
                         "type": "earthquake",
                         "title": "M 5.0 - 41km WSW of Abapo, Bolivia"
-<<<<<<< HEAD
                     },
                     "geometry": {
                         "type": "Point",
                         "coordinates": [-63.848399999999998, -18.9254, 37.719999999999999]
                     },
-=======
-                    },
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [-63.848399999999998, -18.9254, 37.719999999999999]
-                    },
->>>>>>> 8dc1c2b3cf5c5d3207b3288358d3e626da113e44
                     "id": "us7000ae2s"
                 },
                 { "type": "Feature", "properties": { "mag": 5, "place": "38km WSW of Abapo, Bolivia", "time": 1593407192469, "updated": 1593409249040, "tz": -240, "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ae33", "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000ae33&format=geojson", "felt": null, "cdi": null, "mmi": null, "alert": null, "status": "reviewed", "tsunami": 0, "sig": 385, "net": "us", "code": "7000ae33", "ids": ",us7000ae33,", "sources": ",us,", "types": ",geoserve,origin,phase-data,", "nst": null, "dmin": 4.9059999999999997, "rms": 1.2, "gap": 73, "magType": "mb", "type": "earthquake", "title": "M 5.0 - 38km WSW of Abapo, Bolivia" }, "geometry": { "type": "Point", "coordinates": [-63.807099999999998, -18.962599999999998, 35] }, "id": "us7000ae33" },
@@ -116,16 +104,8 @@ function Earthquake(props) {
         }
     }
 
-<<<<<<< HEAD
-
-    function markAllUsersInDanger() {
-        // user_inDangerZone = 1;
-        // user_markedSafe = 0;
-
-=======
     function markAllUsersInDanger() {
         // user_inDangerZone = 1; user_markedSafe = 0;
->>>>>>> 8dc1c2b3cf5c5d3207b3288358d3e626da113e44
         axios
             .put(
                 `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/`
