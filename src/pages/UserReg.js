@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Bootbox from 'bootbox-react';
 
 import './UserReg.css';
 
-function UserReg() {
+function UserReg(props) {
 
-    // function redirectToAbout() {
-    //     href="/pages/About"
-    // }
-
-    // function registerClick(event) {
-    //     redirectToAbout();
-    // }
+    const [showAlert_userReg, setShowAlert_userReg] = useState(false)
+    
+    const handleClose_userReg = () => {
+        console.log("You tots closed that ALERT from the user reg screen man!");
+       
+        return setShowAlert_userReg(false);
+    }
 
     return (
         <div className="UserReg">
@@ -120,21 +121,21 @@ function UserReg() {
                     </div>
                 </div>
                 <div className="text-center text-center">
-
-                    <button type="button" class="btn btn-dark">Register</button>
-
-                    
-
-                    <Link to="/About">
-                    <button
-                        type="button"
-                        // onClick={registerClick}
-                        className="btn btn-dark">
-                        Register
-                    </button>     
-                    </Link>
-
-
+                    {/* <Link to="/About"> */}
+                        <button
+                            type="button"
+                            onClick={() => setShowAlert_userReg(true)}
+                            className="btn btn-dark">
+                            Register
+                            </button>
+                    {/* </Link> */}
+                    <div className="alert-message_userReg">
+                        <Bootbox show={showAlert_userReg}
+                            type={"alert"}
+                            message={"You are now a Quake°Beacon user!"}
+                            onClose={handleClose_userReg}
+                        />
+                    </div>
                 </div>
                 <div className="register-footer">
                     <h6>already have an account?<a href="/">log in</a></h6>

@@ -9,7 +9,7 @@ function NavBar() {
             {/* Navbar created with bootstrap, changed the <a> tags to <div> so we can still use <Link to> */}
             <nav className="navbar navbar-expand-lg navbar-dark nav-background">
                 <div className="navbar-brand">
-                    <Link to="/About">
+                    <Link to="/">
                         <QBLogo />
                     </Link>
                 </div>
@@ -20,7 +20,7 @@ function NavBar() {
                 <div className="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <div className="nav-item nav-link active">
-                            <Link to="/About">
+                            <Link to="/">
                                 <div className="nav-text">About</div>
                                 </Link>
                             <span className="sr-only">
@@ -28,9 +28,14 @@ function NavBar() {
                                     </span>
                         </div>
                         <div className="nav-item nav-link">
-                            <Link to="/">
+                            <Link to="/Login">
                             <div className="nav-text">Login</div>
-                                </Link>
+                            </Link>
+                        </div>
+                        <div className="nav-item nav-link">
+                            <Link to="/UserReg">
+                            <div className="nav-text">Register</div>
+                            </Link>
                         </div>
                     </div>
                 </div>

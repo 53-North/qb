@@ -107,10 +107,17 @@ If the function is WITHIN that component you do not need to pass it in as {notne
         {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
         <div><NavBar /></div>
         <Switch>
-          <Route path="/" /*component={Login} exact*/ render= {props => (<Login {...props} users={users} />)} exact />
+          <Route path="/Login" render= {props => (<Login 
+            {...props} 
+            users={users} />
+             )} />
           <Route path="/UserReg" component={UserReg} />
-          <Route path="/UserSafe" render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
-          <Route path="/About" component={About} />
+          <Route path="/UserSafe" render={props => (<UserSafe 
+            {...props} 
+            users={users} 
+            markSafe={markSafe} />
+            )} />
+          <Route path="/" component={About} exact/> 
           <Route path="/Settings" component={Settings} />
           <Route path="/Test" component={Test}/>
            {/* {...props} is saying go through all the props featured in the component.  

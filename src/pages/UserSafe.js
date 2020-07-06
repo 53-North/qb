@@ -65,12 +65,12 @@ function UserSafe(props) {
                 <h3><strong>ATTENTION!</strong></h3>
             </div>
             <div className="user_safe-para">
-                <h3>
-                    An earthquake has happened and the epicentre is "PROPS in here" km from your location.
-                    </h3>
+                <h5>
+                    An earthquake has happened and the epicentre is 2km from your location
+                </h5>
             </div>
             <div className="safe-text">
-                <h3><strong>ARE YOU SAFE ?</strong></h3>
+                <h1><strong>ARE YOU SAFE ?</strong></h1>
             </div>
             <div className="safe-button text-center">
                 <button

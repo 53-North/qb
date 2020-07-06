@@ -1,3 +1,8 @@
+.UserSafe {
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19); 
+}
+
 .alert-text {
     font-family: 'Nunito', sans-serif;
     font-weight: 900;
@@ -6,7 +11,7 @@
     color: red;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .user_safe-para {
@@ -16,17 +21,16 @@
     color: darkslategray;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .safe-text {
     font-family: 'Nunito', sans-serif;
     margin: 20px 10px 20px 10px;
     text-align: center;
-    color: red;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .logout-footer {
