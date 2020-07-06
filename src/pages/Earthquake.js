@@ -113,6 +113,8 @@ function Earthquake(props) {
         }
     }
 
+    function markAllUsersInDanger() {
+        // user_inDangerZone = 1; user_markedSafe = 0;
 
 
     function markAllUsersInDanger() {

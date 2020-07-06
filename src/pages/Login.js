@@ -10,7 +10,7 @@ function Login(props) {
     function handleTextChange(event) {
         console.log(event.target.value);
         setText(event.target.value);
-      }
+    }
 
 
 
@@ -33,7 +33,7 @@ function Login(props) {
                 window.open("/UserSafe/");
             }
         }
-        
+
     }
 
     function logInClick(event) {
@@ -73,6 +73,7 @@ function Login(props) {
                     <h3>
                         Log in below:
                 </h3>
+                </div>
 
 
             </div>
@@ -118,7 +119,6 @@ function Login(props) {
                                 </label>
                             </div>
                         </div>
-
                     </form>
                 </div>
 
