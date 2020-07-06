@@ -34,6 +34,7 @@ function Login(props) {
                 window.open("/UserSafe/");
                 // return <Link to="/UserSafe"></Link>;
             }    
+            
         }
     }
 
