@@ -6,6 +6,7 @@ import './Login.css';
 
 function Login(props) {
     const [text, setText] = useState("");
+    console.log(props.users);
 
     function handleTextChange(event) {
         console.log(event.target.value);
@@ -39,6 +40,10 @@ function Login(props) {
         //get all the email addresses in an array
         //then loop through the array and check for a match
         //if so...
+
+        //get the email address from the db that matches text
+        //if length > 0 then window.open("/UserSfe/")
+        //else - email address not recognised
 
         // axios
         // .get("https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/")
