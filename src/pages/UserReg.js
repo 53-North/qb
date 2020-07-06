@@ -1,8 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+
 import './UserReg.css';
 
 function UserReg() {
+
+    // function redirectToAbout() {
+    //     href="/pages/About"
+    // }
+
+    // function registerClick(event) {
+    //     redirectToAbout();
+    // }
+
     return (
         <div className="UserReg">
             <div className="UserReg">
@@ -110,7 +120,21 @@ function UserReg() {
                     </div>
                 </div>
                 <div className="text-center text-center">
+
                     <button type="button" class="btn btn-dark">Register</button>
+
+                    
+
+                    <Link to="/About">
+                    <button
+                        type="button"
+                        // onClick={registerClick}
+                        className="btn btn-dark">
+                        Register
+                    </button>     
+                    </Link>
+
+
                 </div>
                 <div className="register-footer">
                     <h6>already have an account?<a href="/">log in</a></h6>
