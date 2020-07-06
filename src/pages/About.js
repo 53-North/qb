@@ -4,7 +4,6 @@ import "./About.css";
 
 function About() {
     return (
-
         <div className="about-main">
             <div className="about-question">
                 <h3>

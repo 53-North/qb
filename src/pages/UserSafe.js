@@ -8,11 +8,11 @@ import Bootbox from 'bootbox-react';
 
 function UserSafe(props) {
 
-console.log(props.users);
+    console.log(props.users);
 
-function handleMarkSafe() {
-    props.markSafe();
-}
+    function handleMarkSafe() {
+        props.markSafe();
+    }
 
     /*
     function humanTest() {
@@ -49,7 +49,7 @@ function handleMarkSafe() {
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
         console.log("You tots closed that ALERT man!");
-        
+
         return setShowAlert(false);
     }
 
@@ -61,22 +61,33 @@ function handleMarkSafe() {
 
     return (
         <div className="UserSafe">
-            <p>An earthquake has happened and the epicentre is "PROPS in here" km from your location
-                <strong> are you safe?</strong></p>
-            <>
-                <button 
-                onClick={() => buttonPressed()}
-                className="btn btn-danger btn-xl"
-                > I AM SAFE </button>
-
+            <div className="alert-text">
+                <h3><strong>ATTENTION!</strong></h3>
+            </div>
+            <div className="user_safe-para">
+                <h3>
+                    An earthquake has happened and the epicentre is "PROPS in here" km from your location.
+                    </h3>
+            </div>
+            <div className="safe-text">
+                <h3><strong>ARE YOU SAFE ?</strong></h3>
+            </div>
+            <div className="safe-button text-center">
+                <button
+                    onClick={() => buttonPressed()}
+                    className="btn btn-danger btn-xl"
+                > I AM SAFE
+                </button>
+            </div>
+            <div className="alert-message">
                 <Bootbox show={showAlert}
                     type={"alert"}
                     message={"Thank you, we are delighted to inform you that you are marked as SAFE on our system.  Should your situation change, please call the EMERGENCY SERVICES"}
-                    onClose={handleClose}/>
-            </>
-            <footer>
-                <Link to="/">Log out</Link>
-            </footer>
+                    onClose={handleClose} />
+            </div>
+            <div className="logout-footer">
+                <h6><Link to="/">Log out</Link></h6>
+            </div>
         </div>
     );
 }

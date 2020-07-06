@@ -1,6 +1,6 @@
 .login-text {
     font-family: 'Nunito', sans-serif;
-    margin: 20px 0px 20px 0px;
+    margin: 80px 60px 15px 60px;
     text-align: center;
     color: darkslategray;
     background-color: white;
@@ -9,16 +9,22 @@
 }
 
 .email-form {
-    margin: 5px 5px 5px 5px;
+    margin: 5px 10px 5px 10px;
 }
 
 .password-form {
-    margin: 5px 5px 5px 5px;
+    margin: 5px 10px 5px 10px;
 }
 
 .form-check-label {
     font-family: 'Nunito', sans-serif;
     font-size: 0.9em;
+}
+
+.login-form-back {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
 .btn {
@@ -31,7 +37,7 @@
 }
 
 .login-footer {
-    margin: 30px 0px 0px 0px;
+    margin: 100px 0px 0px 0px;
     text-align: center;
 }
 
@@ -41,5 +47,5 @@
 
 h6 {
     font-family: 'Nunito', sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
 }
