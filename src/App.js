@@ -33,22 +33,6 @@ function App() {
   //   { myEmail: "joe@gmail.com", myUserId: 2}
   // ]
 
-  function logInUser(text) {
-    //check the email address in the box is one in the database
-    //get all the email addresses in an array
-    //then loop through the array and check for a match
-    //if so...
-    // let idToUse =0;
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].user_email === text) {
-        console.log(text + "valid email address")
-        // idToUse+=(users[i].user_email);
-        // return true;
-      }
-    }
-    // console.log(idToUse)
-  }
-
   function startQuake() {
     let id;
     console.log('quake notification received');
@@ -123,7 +107,7 @@ If the function is WITHIN that component you do not need to pass it in as {notne
         {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
         <div><NavBar /></div>
         <Switch>
-          <Route path="/" /*component={Login} exact*/ render= {props => (<Login {...props} users={users} logInUser={logInUser} />)} exact />
+          <Route path="/" /*component={Login} exact*/ render= {props => (<Login {...props} users={users} />)} exact />
           <Route path="/UserReg" component={UserReg} />
           <Route path="/UserSafe" render={props => (<UserSafe {...props} users={users} markSafe={markSafe} />)} />
           <Route path="/About" component={About} />
