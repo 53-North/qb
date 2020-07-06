@@ -1,10 +1,9 @@
 import React from 'react';
 
-
 function Settings() {
     return (
 
-        <div className="ABout">
+        <div className="About">
             <h2>Change your details- do it here!</h2>
         </div>
 
