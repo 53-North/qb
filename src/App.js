@@ -28,11 +28,6 @@ function App() {
       });
   }, []);
 
-  // const myUsers = [
-  //   { myEmail: "helloupart@gmail.com", myUserId: 1 },
-  //   { myEmail: "joe@gmail.com", myUserId: 2}
-  // ]
-
   function startQuake() {
     let id;
     console.log('quake notification received');
