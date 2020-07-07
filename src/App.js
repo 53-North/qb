@@ -27,6 +27,7 @@ function App() {
         console.log("Could not fetch users", err);
       });
   }, []);
+  console.log(users);
 
   function startQuake() {
     let id;

@@ -152,11 +152,11 @@ function Earthquake(props) {
     }
 
     // delete button 
-        // look through the new STATE called usersInDanger and finds where userID() matches id
+    // look through the new STATE called usersInDanger and finds where userID() matches id
     function deleteUser(id) {
         // if it is NOT the same id return a list of all the users without that ID
         const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id);
-        const deletedUser = usersInDanger.filter(user => user.userID === id);  
+        const deletedUser = usersInDanger.filter(user => user.userID === id);
         setUsersInDanger(updatedUsers_forDelete);
         console.log(deletedUser[0].userID);
         props.markSafe(deletedUser[0].userID);
@@ -189,21 +189,20 @@ function Earthquake(props) {
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
 
                 {usersInDanger.map(person =>
-
                     <div className="callCentreScreen-list-big" >
                         <div className="row callCenterList">
-                            <div className="callCentreScreen-userId col-1">
+                            <div className="callCentreScreen-userId col-0 col-md-0">
                                 {person.userID}
                             </div>
-                            <div className="callCentreScreen-deets col-2">
+                            <div className="callCentreScreen-deets col-4 col-md-2">
                                 {person.user_firstName}
                             </div>
-                            <div className="callCentreScreen-phone col-4">
+                            <div className="callCentreScreen-phone col-4 col-md-8">
                                 {person.user_phone}
                             </div>
                             <button
                                 onClick={() => deleteUser(person.userID)} //this passes the person.userId into deleteUser here so it is inside the scope of this filter.  NO need for handleclick then.
-                                className="btn btn-danger btn-xs col-5"
+                                className="testBtn btn btn-danger btn-xs col-4 col-md-2"
                             > USER IS SAFE
                                     </button>
 

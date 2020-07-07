@@ -22,6 +22,18 @@
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+
+.callCentreScreen-userId {
+display: none;
+text-align: left;
+}
+
+.testBtn {
+    font-size: x-small;
+    text-align: center;
+}
+
 .callCentreScreen-list {
     font-family: 'Nunito', sans-serif;
     padding: 0px 0px 0px 0px;
@@ -30,17 +42,19 @@
 .callCentreScreen-row {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 15px;
+    
 }
 
 .callCentreScreen-deets {
     padding: 0px 0px 0px 0px;
-    text-align: center;
+    text-align: left;
     font-weight: bold;
+
 }
 
 .callCentreScreen-phone {
     padding: 0px 0px 0px 0px;
-    text-align: center;
+    text-align: left;
     font-size: smaller;
 }
 
