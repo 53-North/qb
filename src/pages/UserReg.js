@@ -22,10 +22,10 @@ function UserReg(props) {
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" class="form-control" id="exampleInputForName" placeholder="First Name" />
+                        <input type="name" className="form-control" id="exampleInputForName" placeholder="First Name" />
                     </div>
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" class="form-control" id="exampleInputForName" placeholder="Surname" />
+                        <input type="name" className="form-control" id="exampleInputForName" placeholder="Surname" />
                     </div>
                 </div>
                 <div className="row">
@@ -42,7 +42,7 @@ function UserReg(props) {
                     </div>
                     <div className="col-12 col-md-6 input-group mb-3">
                         <div className="input-group-prepend">
-                            <label className="input-group-text" for="inputGroupSelect01">Language</label>
+                            <label className="input-group-text" htmlFor="inputGroupSelect01">Language</label>
                         </div>
                         <select className="custom-select" id="inputGroupSelect01">
                             <option value="Afrikaans">Afrikaans</option>

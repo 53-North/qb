@@ -173,73 +173,61 @@ function Earthquake(props) {
     function deleteUser(id) {
         // look through the new STATE called usersInDanger and find where the userID of that user ===id.
         // if it is NOT the same id return a list of all the users without that ID
-        const updatedUsers = usersInDanger && usersInDanger.filter(user => user.userID !== id); 
+        const updatedUsers = usersInDanger && usersInDanger.filter(user => user.userID !== id);
         //if it return TRUE it keeps it, if false it removes it
         // then update the STATE which is the usersInDanger.
         setUsersInDanger(updatedUsers);
         console.log(updatedUsers);
-      }
+    }
 
-      
+
 
     return (
-        <div className="earthquake-all">
+        <div className="container earthquake-all">
             <div className="earthquake-text">
-                <h2 >Potentially Unsafe Users</h2>
-                <div className="earthquake_button text-center">
-                    <button
-                        className="btn btn-danger btn-block"
-                        onClick={handleEarthquakeClick}>
-                            Press this button when there is an earthquake
+                <h3>Potentially Unsafe Users</h3>
+            </div>
+            <div className="earthquake_button text-center">
+                <button
+                    className="btn btn-danger btn-block"
+                    onClick={handleEarthquakeClick}>
+                    Press this button when there is an earthquake
                     </button>
-                </div>
-                <div claasName="earthquake-alert">
-                    <Bootbox show={showAlert_earthquake}
-                        type={"alert"}
-                        message={"An earthquake has been triggered. All users are marked as not safe."}
-                        onClose={handleClose} />
-                </div>
-                
             </div>
-
+            <div className="earthquake-alert">
+                <Bootbox show={showAlert_earthquake}
+                    type={"alert"}
+                    message={"An earthquake has been triggered. All users are marked as not safe."}
+                    onClose={handleClose} />
+            </div>
             <div className="callCentreScreen-main">
-                <div className="callCentreScreen-background">
-                    <div>
-{/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
+                {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
-                        {usersInDanger.map(person =>
-                            <div className="callCentreScreen-list" >
-                                <div className="row callCenterList">
-                                    <div className="callCentreScreen-deets col-3">
-                                        {person.user_firstName}
-                                    </div>
-                                    <div className="callCentreScreen-phone col-4">
-                                        {person.user_phone}
-                                    </div>
-                                    <button
-                                        onClick={() => deleteUser(usersInDanger.userID)}
-                                        className="btn btn-danger btn-xs col-5"
-                                    > USER IS SAFE
-                                    </button>
-                                </div>
-                                <Bootbox show={showAlert_userSafe}
-                                    type={"alert"}
-                                    message={"You have marked a USER AS SAFE"}
-                                    onClose={handleClose} />
+                {usersInDanger.map(person =>
+                    <div className="callCentreScreen-list" >
+                        <div className="row callCentreScreen-row">
+                            <div className="callCentreScreen-deets col-3 col-md-3">
+                                {person.user_firstName}
                             </div>
-                        )}
-
-
+                            <div className="callCentreScreen-phone col-4 col-md-4">
+                                {person.user_phone}
+                            </div>
+                            <div className="button-area col-5 col-md-5">
+                                <button
+                                    onClick={() => deleteUser(usersInDanger.userID)}
+                                    className="btn btn-danger btn-sm"
+                                > USER SAFE
+                                    </button>
+                            </div>
+                        </div>
+                        <Bootbox show={showAlert_userSafe}
+                            type={"alert"}
+                            message={"You have marked a USER AS SAFE"}
+                            onClose={handleClose} />
                     </div>
-
-
-
-
-
-                </div>
+                )}
             </div>
-            
-        </div >
+        </div>
     )
 }
 
