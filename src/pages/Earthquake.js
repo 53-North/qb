@@ -161,22 +161,20 @@ function Earthquake(props) {
     function deleteUser(id) {
         // look through the new STATE called usersInDanger and find where the userID of that user ===id.
         // if it is NOT the same id return a list of all the users without that ID
-        const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id); 
+        const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id);
         setUsersInDanger(updatedUsers_forDelete);
-            console.log("updated users for delete");
-            console.log(updatedUsers_forDelete);
+        console.log("updated users for delete");
+        console.log(updatedUsers_forDelete);
     }
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
 
     //end of delete function1
-    function handleDeleteClick() {
-        for (let i=0; i<usersInDanger.length; i++) {
-        console.log("The delete button has been clicked");
-        console.log(usersInDanger[i].userID);
-        deleteUser(usersInDanger[i].userID);
-        }
-    }
+    // function handleDeleteClick() {
+    //     console.log("The delete button has been clicked");
+    //     console.log();
+    //     deleteUser(person.userID);
+    // }
 
     //end of delete button
 
@@ -199,33 +197,40 @@ function Earthquake(props) {
                         onClose={handleClose_earthquake} />
                 </div>
             </div>
-                
-            
+
+
             <div className="callCentreScreen-main">
                 {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
 
-                        {usersInDanger.map(person =>
-                            <div className="callCentreScreen-list-big" >
-                                <div className="row callCenterList">
-                                    <div className="callCentreScreen-deets col-3">
-                                        {person.user_firstName}
-                                    </div>
-                                    <div className="callCentreScreen-phone col-4">
-                                        {person.user_phone}
-                                    </div>
-                                    <button
-                                        onClick={handleDeleteClick}
-                                        className="btn btn-danger btn-xs col-5"
-                                    > USER IS SAFE
+                {usersInDanger.map(person =>
+
+                    <div className="callCentreScreen-list-big" >
+                        <div className="row callCenterList">
+                            <div className="callCentreScreen-userId col-1">
+                                {person.userID}
+                            </div>
+                            <div className="callCentreScreen-deets col-2">
+                                {person.user_firstName}
+                            </div>
+                            <div className="callCentreScreen-phone col-4">
+                                {person.user_phone}
+                            </div>
+                            <button
+                                onClick={() => deleteUser(person.userID)}
+                                className="btn btn-danger btn-xs col-5"
+                            > USER IS SAFE
                                     </button>
-                                </div>
-                                {/* <Bootbox show={showAlert_userSafe}
+
+                        </div>
+                        {/* <Bootbox show={showAlert_userSafe}
                                 type={"alert"}
                                 message={"You have marked a USER AS SAFE"}
                                 onClose={handleClose} /> */}
-                            </div>     
-                
+                    </div>
+
+
+
                 )}
             </div>
         </div>
