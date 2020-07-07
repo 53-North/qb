@@ -121,7 +121,8 @@ If the function is WITHIN that component you do not need to pass it in as {notne
               {...props} 
               users={users} 
               markSafe={markSafe} 
-              startQuake={startQuake} />
+              startQuake={startQuake}
+               />
               )} />
           <Route component={NotFound} />
 

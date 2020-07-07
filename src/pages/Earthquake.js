@@ -8,7 +8,7 @@ import './Earthquake.css';
 
 function Earthquake(props) {
     //usersInDanger is a new pieces of state which has been set to an EMPTY array
-    const [usersInDanger, setUsersInDanger] = useState([])
+    const [usersInDanger, setUsersInDanger] = useState([]);
 
     function checkQuakeData() {
         let qData = {
@@ -129,36 +129,6 @@ function Earthquake(props) {
     }
     //end of pop up alert box code
 
-    //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
-    //It takes in the toCall function (which generates the list of unsafe users)
-    //and setShowAlert_earthquake functions (which is what is used to change the showAlert_earthquake state to make a pop up box)
-    function handleEarthquakeClick() {
-        // props.triggerEarthquake()
-        console.log("All users marked in danger")
-        props.startQuake();
-        toCall();
-        console.log(resultToCall);
-        setShowAlert_earthquake(true);
-    }
-
-    //buttons so call centre thing can mark the user as safe.
-    // function handleMarkSafe() {
-    //     props.markSafe();
-    // }
-
-    // const [showAlert_userSafe, setShowAlert_userSafe] = useState(false)
-    // const handleClose_userSafe = () => {
-    //     console.log("You tots closed that ALERT man!");
-
-    //     return setShowAlert_userSafe(false);
-    // }
-
-    // function buttonPressed() {
-    //     console.log('button pressed');
-    //     setShowAlert_userSafe(true);
-    //     handleMarkSafe();
-    // }
-
     //this is a function to find the users from the GET that are NOT safe and return an array of objects 
     //called resultToCall.
     //we then change the usersInDanger state by passing in this new array (resultToCall).
@@ -172,25 +142,41 @@ function Earthquake(props) {
         setUsersInDanger(resultToCall)
     }
 
+    //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
+    //It takes in the toCall function (which generates the list of unsafe users)
+    //and setShowAlert_earthquake functions (which is what is used to change the showAlert_earthquake state to make a pop up box)
+    function handleEarthquakeClick() {
+        // props.triggerEarthquake()
+        console.log("All users marked in danger")
+        props.startQuake();
+        toCall();
+        console.log(resultToCall);
+        setShowAlert_earthquake(true);
+    }
 
+
+
+    // trying to make a delete button
+    //delete function1
+    function deleteUser(id) {
+        // look through the new STATE called usersInDanger and find where the userID of that user ===id.
+        // if it is NOT the same id return a list of all the users without that ID
+        const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id); 
+        setUsersInDanger(updatedUsers_forDelete);
+            console.log("updated users for delete");
+            console.log(updatedUsers_forDelete);
+    }
+    //if it return TRUE it keeps it, if false it removes it
+    // then update the STATE which is the usersInDanger.
+
+    //end of delete function1
     function handleDeleteClick() {
         console.log("The delete button has been clicked");
-        deleteUser(usersInDanger.userID);
-        }
-    // trying to make a delete button
-        function deleteUser(id) {
-            // look through the new STATE called usersInDanger and find where the userID of that user ===id.
-            // if it is NOT the same id return a list of all the users without that ID
-            const updatedUsers = usersInDanger.filter(user => user.userID !== id); 
-            //if it return TRUE it keeps it, if false it removes it
-            // then update the STATE which is the usersInDanger.
-            setUsersInDanger(updatedUsers);
-            console.log("updated users");
-            console.log(updatedUsers);
-            console.log(id);
-        }
+        console.log(usersInDanger[0].userID);
+        deleteUser(usersInDanger[1].userID);
+    }
 
-    
+    //end of delete button
 
     return (
         <div className="earthquake-all">
@@ -200,25 +186,25 @@ function Earthquake(props) {
                     <button
                         className="btn btn-danger btn-block"
                         onClick={handleEarthquakeClick}>
-                            Press this button when there is an earthquake
+                        Press this button when there is an earthquake
                     </button>
                 </div>
-                <div claasName="earthquake-alert">
+                <div className="earthquake-alert">
                     <Bootbox show={showAlert_earthquake}
                         type={"alert"}
                         message={"An earthquake has been triggered. All users are marked as not safe."}
                         onClose={handleClose_earthquake} />
                 </div>
-                
+
             </div>
 
             <div className="callCentreScreen-main">
                 <div className="callCentreScreen-background">
                     <div>
-{/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
+                        {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
                         {usersInDanger.map(person =>
-                            <div className="callCentreScreen-list" >
+                            <div className="callCentreScreen-list-big" >
                                 <div className="row callCenterList">
                                     <div className="callCentreScreen-deets col-3">
                                         {person.user_firstName}
@@ -244,7 +230,7 @@ we then make a map of the info in this state and return only the bits of the sta
 
                 </div>
             </div>
-            
+
         </div >
     )
 }
