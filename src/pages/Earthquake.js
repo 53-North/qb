@@ -171,15 +171,18 @@ function Earthquake(props) {
 
     //end of delete function1
     function handleDeleteClick() {
+        for (let i=0; i<usersInDanger.length; i++) {
         console.log("The delete button has been clicked");
-        console.log(usersInDanger[0].userID);
-        deleteUser(usersInDanger[1].userID);
+        console.log(usersInDanger[i].userID);
+        deleteUser(usersInDanger[i].userID);
+        }
     }
 
     //end of delete button
 
+
     return (
-        <div className="earthquake-all">
+        <div className="container earthquake-all">
             <div className="earthquake-text">
                 <h2 >Potentially Unsafe Users</h2>
                 <div className="earthquake_button text-center">
@@ -195,14 +198,13 @@ function Earthquake(props) {
                         message={"An earthquake has been triggered. All users are marked as not safe."}
                         onClose={handleClose_earthquake} />
                 </div>
-
             </div>
-
+                
+            
             <div className="callCentreScreen-main">
-                <div className="callCentreScreen-background">
-                    <div>
-                        {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
+                {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
+
                         {usersInDanger.map(person =>
                             <div className="callCentreScreen-list-big" >
                                 <div className="row callCenterList">
@@ -218,20 +220,15 @@ we then make a map of the info in this state and return only the bits of the sta
                                     > USER IS SAFE
                                     </button>
                                 </div>
-                            </div>
-                        )}
-
-
-                    </div>
-
-
-
-
-
-                </div>
+                                {/* <Bootbox show={showAlert_userSafe}
+                                type={"alert"}
+                                message={"You have marked a USER AS SAFE"}
+                                onClose={handleClose} /> */}
+                            </div>     
+                
+                )}
             </div>
-
-        </div >
+        </div>
     )
 }
 
