@@ -121,11 +121,13 @@ function Earthquake(props) {
             });
     }
 
+    //This bit of code is for the pop up alert box
     const [showAlert_earthquake, setShowAlert_earthquake] = useState(false)
-    // const handleClose = () => {
-    //     console.log("You tots closed that ALERT man!");
-    //     return setShowAlert(false);
-    // }
+    const handleClose_earthquake = () => {
+        console.log("You tots closed that ALERT man!");
+        return setShowAlert_earthquake(false);
+    }
+    //end of pop up alert box code
 
     //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
     //It takes in the toCall function (which generates the list of unsafe users)
@@ -140,22 +142,23 @@ function Earthquake(props) {
     }
 
     //buttons so call centre thing can mark the user as safe.
-    function handleMarkSafe() {
-        props.markSafe();
-    }
+    // function handleMarkSafe() {
+    //     props.markSafe();
+    // }
 
-    const [showAlert_userSafe, setShowAlert_userSafe] = useState(false)
-    const handleClose = () => {
-        console.log("You tots closed that ALERT man!");
+    // const [showAlert_userSafe, setShowAlert_userSafe] = useState(false)
+    // const handleClose_userSafe = () => {
+    //     console.log("You tots closed that ALERT man!");
 
-        return setShowAlert_userSafe(false);
-    }
+    //     return setShowAlert_userSafe(false);
+    // }
 
-    function buttonPressed() {
-        console.log('button pressed');
-        setShowAlert_userSafe(true);
-        handleMarkSafe();
-    }
+    // function buttonPressed() {
+    //     console.log('button pressed');
+    //     setShowAlert_userSafe(true);
+    //     handleMarkSafe();
+    // }
+
     //this is a function to find the users from the GET that are NOT safe and return an array of objects 
     //called resultToCall.
     //we then change the usersInDanger state by passing in this new array (resultToCall).
@@ -169,18 +172,25 @@ function Earthquake(props) {
         setUsersInDanger(resultToCall)
     }
 
-    // trying to make a delete button
-    function deleteUser(id) {
-        // look through the new STATE called usersInDanger and find where the userID of that user ===id.
-        // if it is NOT the same id return a list of all the users without that ID
-        const updatedUsers = usersInDanger && usersInDanger.filter(user => user.userID !== id); 
-        //if it return TRUE it keeps it, if false it removes it
-        // then update the STATE which is the usersInDanger.
-        setUsersInDanger(updatedUsers);
-        console.log(updatedUsers);
-      }
 
-      
+    function handleDeleteClick() {
+        console.log("The delete button has been clicked");
+        deleteUser(usersInDanger.userID);
+        }
+    // trying to make a delete button
+        function deleteUser(id) {
+            // look through the new STATE called usersInDanger and find where the userID of that user ===id.
+            // if it is NOT the same id return a list of all the users without that ID
+            const updatedUsers = usersInDanger.filter(user => user.userID !== id); 
+            //if it return TRUE it keeps it, if false it removes it
+            // then update the STATE which is the usersInDanger.
+            setUsersInDanger(updatedUsers);
+            console.log("updated users");
+            console.log(updatedUsers);
+            console.log(id);
+        }
+
+    
 
     return (
         <div className="earthquake-all">
@@ -197,7 +207,7 @@ function Earthquake(props) {
                     <Bootbox show={showAlert_earthquake}
                         type={"alert"}
                         message={"An earthquake has been triggered. All users are marked as not safe."}
-                        onClose={handleClose} />
+                        onClose={handleClose_earthquake} />
                 </div>
                 
             </div>
@@ -217,15 +227,11 @@ we then make a map of the info in this state and return only the bits of the sta
                                         {person.user_phone}
                                     </div>
                                     <button
-                                        onClick={() => deleteUser(usersInDanger.userID)}
+                                        onClick={handleDeleteClick}
                                         className="btn btn-danger btn-xs col-5"
                                     > USER IS SAFE
                                     </button>
                                 </div>
-                                <Bootbox show={showAlert_userSafe}
-                                    type={"alert"}
-                                    message={"You have marked a USER AS SAFE"}
-                                    onClose={handleClose} />
                             </div>
                         )}
 
