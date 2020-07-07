@@ -1,23 +1,32 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Bootbox from 'bootbox-react';
+
 import './UserReg.css';
-import NavBar from "../NavBar";
 
-function UserReg() {
+function UserReg(props) {
+
+    const [showAlert_userReg, setShowAlert_userReg] = useState(false)
+    
+    const handleClose_userReg = () => {
+        console.log("You tots closed that ALERT from the user reg screen man!");
+       
+        return setShowAlert_userReg(false);
+    }
+
     return (
-
         <div className="UserReg">
             <div className="UserReg">
-                <h4 className="UserRegh4">Register below .....</h4>
-
+                <div className="register-text">
+                    <h3>Register below ...</h3>
+                </div>
                 <div className="row">
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" class="form-control" id="exampleInputForName" placeholder="First Name" />
+                        <input type="name" className="form-control" id="exampleInputForName" placeholder="First Name" />
                     </div>
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" class="form-control" id="exampleInputForName" placeholder="Surname" />
+                        <input type="name" className="form-control" id="exampleInputForName" placeholder="Surname" />
                     </div>
-
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 form-group">
@@ -27,15 +36,13 @@ function UserReg() {
                         <input type="phone" className="form-control" id="phone" placeholder="Phone: (+44)101 110 1010" />
                     </div>
                 </div>
-
                 <div className="row">
                     <div className="col-12 col-md-6 form-group">
                         <input type="date" className="form-control" id="dob" placeholder="D.O.B" />
                     </div>
-
                     <div className="col-12 col-md-6 input-group mb-3">
                         <div className="input-group-prepend">
-                            <label className="input-group-text" for="inputGroupSelect01">Language</label>
+                            <label className="input-group-text" htmlFor="inputGroupSelect01">Language</label>
                         </div>
                         <select className="custom-select" id="inputGroupSelect01">
                             <option value="Afrikaans">Afrikaans</option>
@@ -114,10 +121,25 @@ function UserReg() {
                     </div>
                 </div>
                 <div className="text-center text-center">
-                        <button type="button" class="btn btn-dark">Register</button>
+                    {/* <Link to="/About"> */}
+                        <button
+                            type="button"
+                            onClick={() => setShowAlert_userReg(true)}
+                            className="btn btn-dark">
+                            Register
+                            </button>
+                    {/* </Link> */}
+                    <div className="alert-message_userReg">
+                        <Bootbox show={showAlert_userReg}
+                            type={"alert"}
+                            message={"You are now a Quake°Beacon user!"}
+                            onClose={handleClose_userReg}
+                        />
+                    </div>
                 </div>
-
-                <p>already have an account? <a href="/">log in </a> </p>
+                <div className="register-footer">
+                    <h6>already have an account?<a href="/">log in</a></h6>
+                </div>
             </div>
         </div>
     );

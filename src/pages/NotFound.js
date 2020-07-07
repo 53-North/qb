@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NotFound.css';
-import NavBar from "../NavBar";
 import logo from "./img/Error.jpg"
 import { withRouter } from 'react-router-dom'
 
