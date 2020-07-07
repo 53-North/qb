@@ -48,7 +48,7 @@ function App() {
           // There is probably no data returned from a Put request.
           // But if you're in the "then" function you know the request succeeded.
           console.log(updatedUsers[i].userID + ' marked in danger');
-          console.log(updatedUsers[i].user_inDangerZone);
+          //console.log(updatedUsers[i].user_inDangerZone);
         })
         .catch(err => {
           console.log("Error marking " + updatedUsers[i].userID + " in danger", err);
@@ -60,7 +60,7 @@ function App() {
   }
 
   function markSafe(id) {
-    id = 1; // this line needs to be removed when we get the app using different users
+    //id = 1; // this line needs to be removed when we get the app using different users
     console.log('clicked mark safe button');
     const updatedUsers = users.map(user => {
       if (user.userID === id) {
@@ -75,7 +75,7 @@ function App() {
 
     axios
       .put(
-        `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, updatedUsers[0]
+        `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${id}`, updatedUser[0]
       )
       .then(res => {
         // There is probably no data returned from a Put request.

@@ -154,17 +154,18 @@ function Earthquake(props) {
         setShowAlert_earthquake(true);
     }
 
-
-
     // trying to make a delete button
     //delete function1
     function deleteUser(id) {
         // look through the new STATE called usersInDanger and find where the userID of that user ===id.
         // if it is NOT the same id return a list of all the users without that ID
         const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id);
+        const deletedUser = usersInDanger.filter(user => user.userID === id);
         setUsersInDanger(updatedUsers_forDelete);
-        console.log("updated users for delete");
-        console.log(updatedUsers_forDelete);
+        // console.log("updated users for delete");
+        // console.log(updatedUsers_forDelete);
+        console.log(deletedUser[0].userID);
+        props.markSafe(deletedUser[0].userID);
     }
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
