@@ -18,33 +18,8 @@ function About() {
                     What is Quake°Beacon?
                 </h3>
             </div>
-
-
-//             <div className="about-para">
-//                 <h4>Get Information</h4>
-//                 <p>When an incident such as an earthquake, occurs where the severity of the quake means that people might be in danger, global crisis reporting agencies alert Quake°Beacon.</p>
-//                 <p>
-//                 Mark Yourself Safe
-//                 Quickly reassure friends and family by marking yourself safe.
-//                 </p>
-//                 <p>
-//                     this is the answer to this question. im not too great with words so we need a paragraph
-//                     explaining the app and how it can help people.
-//                     we could also show a cool little illustration/ map about what happens e.g "were always watching earthquake data",
-//                     "when theres an earthquake in your area we add you to a search database that tells us your in danger", "if you tell us
-//                     you're safe we take you off" etc but each section can be a visualisation. All time dependent though.
-//                 </p>
-//             </div>
-
             <div className="about-illo">
-                <div className="row illo_signup">
-                    <div className="col-4 signup-png">
-                        <img src={login} alt="login illustration" />
-                    </div>
-                    <div className="col-8 signup-text">
-                        <p>Sign up for an account with us and register your details.</p>
-                    </div>
-                </div>
+                
                 <div className="row illo_listen">
                     <div className="col-8 listen-text">
                         <p>We're constantly listening to earthquake data from <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener noreferrer">USGS </a>
@@ -94,20 +69,31 @@ function About() {
                     </div>
                     <div className="col-8 search-text">
                         <p>The local area rescue services will now be using our database to search for you along with
-                            their own resources.
+                        their own resources.
                         </p>
                     </div>
                 </div>
                 <div className="row illo_success">
                     <div className="col-8 success-text">
-                        <p>By automatically adding you to our search database, 
-                            it takes away the need to call the emergency services when a disaster heppens.
+                        <p>By automatically adding you to our search database,
+                        it takes away the need to call the emergency services when a disaster heppens.
                         </p>
                     </div>
                     <div className="col-4 success-png">
                         <img src={success} alt="thumbs up" />
                     </div>
                 </div>
+
+                <div className="row illo_signup">
+                    <div className="col-4 signup-png">
+                        <img src={login} alt="login illustration" />
+                    </div>
+                    <div className="col-8 signup-text">
+                        <p><a href="/UserReg">Register  </a> for an account with us.  Already a user 
+                        <a href="/UserReg"> login  </a> here.</p>
+                    </div>
+                </div>
+
             </div>
             <footer>
                 <div className="illustration-credit">

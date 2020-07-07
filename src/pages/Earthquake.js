@@ -169,15 +169,6 @@ function Earthquake(props) {
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
 
-    //end of delete function1
-    // function handleDeleteClick() {
-    //     console.log("The delete button has been clicked");
-    //     console.log();
-    //     deleteUser(person.userID);
-    // }
-
-    //end of delete button
-
 
     return (
         <div className="container earthquake-all">
