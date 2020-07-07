@@ -27,6 +27,7 @@ function About() {
             </div>
             <div className="about-illo">
                 <h3>illustration here!!!</h3>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
             </div>
             <div className="about-question_2">
                 <h3>
