@@ -71,7 +71,6 @@ function Login(props) {
             </div>
 
             <form>
-
                 <div className=" form-group">
                     <input type="email"
                         className="form-control"
@@ -86,10 +85,9 @@ function Login(props) {
                         id="exampleInputPassword1"
                         placeholder="Password"
                     />
-
                     <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="dropdownCheck" />
-                        <label className="form-check-label" for="dropdownCheck">
+                        <label className="form-check-label" htmlFor="dropdownCheck">
                             Remember me
                         </label>
                     </div>
