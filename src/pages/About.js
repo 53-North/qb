@@ -11,6 +11,12 @@ function About() {
                 </h3>
             </div>
             <div className="about-para">
+                <h4>Get Information</h4>
+                <p>When an incident such as an earthquake, occurs where the severity of the quake means that people might be in danger, global crisis reporting agencies alert Quake°Beacon.</p>
+                <p>
+                Mark Yourself Safe
+                Quickly reassure friends and family by marking yourself safe.
+                </p>
                 <p>
                     this is the answer to this question. im not too great with words so we need a paragraph
                     explaining the app and how it can help people.
