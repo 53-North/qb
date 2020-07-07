@@ -114,7 +114,6 @@ function Earthquake(props) {
                 // There is probably no data returned from a Put request.
                 // But if you're in the "then" function you know the request succeeded.
                 console.log("All users marked in danger zone");
-
             })
             .catch(err => {
                 console.log("Error marking users in danger zone", err);
@@ -129,9 +128,8 @@ function Earthquake(props) {
     }
     //end of pop up alert box code
 
-    //this is a function to find the users from the GET that are NOT safe and return an array of objects 
-    //called resultToCall.
-    //we then change the usersInDanger state by passing in this new array (resultToCall).
+    //function to find the users from the GET that are NOT safe and return an array of objects called resultToCall.
+    //it then changes the usersInDanger STATE by passing in this new array (resultToCall).
     const resultToCall = [];
     function toCall() {
         for (let i = 0; i < props.users.length; i++) {
@@ -142,7 +140,7 @@ function Earthquake(props) {
         setUsersInDanger(resultToCall)
     }
 
-    //handleEartquakeClick is taking props from the startQuake function passed as props as the startQuake function is App.js.
+    //handleEartquakeClick is taking props from the startQuake function passed as props startQuake is in App.js.
     //It takes in the toCall function (which generates the list of unsafe users)
     //and setShowAlert_earthquake functions (which is what is used to change the showAlert_earthquake state to make a pop up box)
     function handleEarthquakeClick() {
@@ -150,26 +148,21 @@ function Earthquake(props) {
         console.log("All users marked in danger")
         props.startQuake();
         toCall();
-        console.log(resultToCall);
         setShowAlert_earthquake(true);
     }
 
-    // trying to make a delete button
-    //delete function1
+    // delete button 
+        // look through the new STATE called usersInDanger and finds where userID() matches id
     function deleteUser(id) {
-        // look through the new STATE called usersInDanger and find where the userID of that user ===id.
         // if it is NOT the same id return a list of all the users without that ID
         const updatedUsers_forDelete = usersInDanger.filter(user => user.userID !== id);
-        const deletedUser = usersInDanger.filter(user => user.userID === id);
+        const deletedUser = usersInDanger.filter(user => user.userID === id);  
         setUsersInDanger(updatedUsers_forDelete);
-        // console.log("updated users for delete");
-        // console.log(updatedUsers_forDelete);
         console.log(deletedUser[0].userID);
         props.markSafe(deletedUser[0].userID);
     }
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
-
 
     return (
         <div className="container earthquake-all">
@@ -209,7 +202,7 @@ we then make a map of the info in this state and return only the bits of the sta
                                 {person.user_phone}
                             </div>
                             <button
-                                onClick={() => deleteUser(person.userID)}
+                                onClick={() => deleteUser(person.userID)} //this passes the person.userId into deleteUser here so it is inside the scope of this filter.  NO need for handleclick then.
                                 className="btn btn-danger btn-xs col-5"
                             > USER IS SAFE
                                     </button>
@@ -220,9 +213,6 @@ we then make a map of the info in this state and return only the bits of the sta
                                 message={"You have marked a USER AS SAFE"}
                                 onClose={handleClose} /> */}
                     </div>
-
-
-
                 )}
             </div>
         </div>
