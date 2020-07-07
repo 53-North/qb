@@ -14,22 +14,6 @@
     color: black;
 }
 
-.about-question_2 {
-    font-family: 'Nunito', sans-serif;
-    margin: 20px 40px 20px 40px;
-    text-align: center;
-    color: darkslategray;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
-}
-
-.about-para_2 {
-    font-family: 'Nunito', sans-serif;
-    padding: 0px 20px 10px 20px;
-    color: black;
-}
-
 p {
     font-size: 0.8em;
     font-weight: 300;
@@ -42,3 +26,30 @@ h3 {
     font-weight: 700;
     margin: 0;
 }
+
+.illustration-credit {
+    align-content: center;
+    font-size: 12px;
+}
+
+/* CSS for illustrations */
+
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.about-main {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.about-illo {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.safe-text {
+    margin: 0px 0px 0px 0px;
+}
+
