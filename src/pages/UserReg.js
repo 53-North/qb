@@ -147,7 +147,7 @@ function UserReg(props) {
                     </div>
                 </div>
                 <div className="register-footer">
-                    <h6>already have an account?<a href="/">log in</a></h6>
+                    <h6>already have an account? - <a href="/"> log in</a></h6>
                 </div>
             </div>
         </div>
