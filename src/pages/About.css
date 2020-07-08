@@ -13,6 +13,7 @@ p {
     font-weight: 300;
     line-height: 1.2em;
     text-align: left;
+    margin: 10px 0px 0px 0px;
 }
 
 h3 {
@@ -29,12 +30,6 @@ h3 {
 }
 
 /* CSS for illustrations */
-
-.row {
-    margin: 10px 10px 10px 10px;
-    border-radius: 10px;
-    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
-}
 
 img {
     height: 80px;
@@ -61,31 +56,31 @@ img {
 }
 
 .listen-png{
-    padding: 10px 0px 0px 20px;
+    padding: 10px 0px 15px 20px;
 }
 
 .quake-png{
-    padding: 20px 0px 0px 25px;
+    padding: 20px 0px 20px 35px;
 }
 
 .safe-png{
-    padding: 0px 0px 0px 25px;
+    padding: 10px 0px 10px 35px;
 }
 
 .not-safe-png{
-    padding: 15px 0px 0px 20px;
+    padding: 15px 0px 10px 20px;
 }
 
 .search-png{
-    padding: 15px 0px 0px 20px;
+    padding: 15px 0px 10px 30px;
 }
 
 .success-png{
-    padding: 15px 25px 0px 20px;
+    padding: 15px 20px 15px 20px;
 }
 
 .signup-png{
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 35px;
 }
 
 
