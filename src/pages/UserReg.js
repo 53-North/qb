@@ -6,14 +6,22 @@ import './UserReg.css';
 
 function UserReg(props) {
 
+    //function to make a pop up box
     const [showAlert_userReg, setShowAlert_userReg] = useState(false)
-    
     const handleClose_userReg = () => {
         console.log("You tots closed that ALERT from the user reg screen man!");
-       
-        return setShowAlert_userReg(false);
+        window.open("/Login","_self"); //once alert closed it takes user back to home page
+        return setShowAlert_userReg(false);     
     }
+    //end of pop up box function
 
+    //function to make the onClick do more than one thing
+    function regButtonPressed() {
+        console.log('reg button pressed');
+        // window.open("/","_self") 
+        setShowAlert_userReg(true);
+    }
+ 
     return (
         <div className="UserReg">
             <div className="UserReg">
@@ -124,13 +132,14 @@ function UserReg(props) {
                     {/* <Link to="/About"> */}
                         <button
                             type="button"
-                            onClick={() => setShowAlert_userReg(true)}
+                            onClick={regButtonPressed} //() => setShowAlert_userReg(true)
                             className="btn btn-dark">
                             Register
                             </button>
                     {/* </Link> */}
                     <div className="alert-message_userReg">
-                        <Bootbox show={showAlert_userReg}
+                        <Bootbox 
+                            show={showAlert_userReg}
                             type={"alert"}
                             message={"You are now a Quake°Beacon user!"}
                             onClose={handleClose_userReg}

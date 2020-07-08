@@ -50,7 +50,7 @@ function UserSafe(props) {
     const [showAlert, setShowAlert] = useState(false)
     const handleClose = () => {
         console.log("You tots closed that ALERT man!");
-
+        window.open("/","_self");
         return setShowAlert(false);
     }
 
