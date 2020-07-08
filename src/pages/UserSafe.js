@@ -63,14 +63,14 @@ function UserSafe(props) {
     return (
         <div className="UserSafe">
             <div className="alert-text">
-                <h3>ATTENTION!</h3>
+                <h3><strong>ATTENTION!</strong></h3>
             </div>
             <div className="user_safe-para">
                 <h5>
-                    An earthquake has happened and the epicentre is 2km from your location
+                    An earthquake has happened and the epicentre is 2km from your location.
                 </h5>
             </div>
-            <div className="safe-text">
+            <div className="safe-question-text">
                 <h1><strong>ARE YOU SAFE ?</strong></h1>
             </div>
             <div className="safe-button text-center">
@@ -86,9 +86,11 @@ function UserSafe(props) {
                     message={"Thank you, we are delighted to inform you that you are marked as SAFE on our system.  Should your situation change, please call the EMERGENCY SERVICES"}
                     onClose={handleClose} />
             </div>
+            <footer>
             <div className="logout-footer">
                 <h6><Link to="/">Log out</Link></h6>
             </div>
+            </footer>
         </div>
     );
 }
