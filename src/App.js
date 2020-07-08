@@ -16,38 +16,6 @@ import Test from "./pages/Test";
 
 // FONT FAMILY, font-family: 'Nunito', sans-serif;
 function App() {
-
-  //trying to get UserReg screen to work
-
-  function addUser(firstname, surname, email, phone, language) {
-    //get a copy of the tasks that are aready there, add a new task into this array, update the task state
-    const newUser = {
-      userId: uuidv4(),
-      user_email: email,
-      user_phone: phone,
-      user_language: language,
-      user_firstName: firstname,
-      user_lastName: surname, 
-    }
-
-    axios.post('https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/', newUser)
-      .then(
-        //If the request is successful, get the task id and add it to the new task object
-        (response) => {
-          newUser.userId = response.data.user[0].userId;
-          console.log(newUser);
-          const updatedUsers_reg = [...users, newUser];
-          setUsers(updatedUsers_reg);
-          console.log(users);
-        }
-      )
-      .catch(error => {
-        console.log('Error adding a task', error)
-      })
-  }
-
-  //end of UserReg post
-
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios
@@ -62,6 +30,37 @@ function App() {
   console.log(users);
 
   let id;
+
+  //trying to get UserReg screen to work
+
+  function addUser(firstname, surname, email, phone, language) {
+    //get a copy of the tasks that are aready there, add a new task into this array, update the task state
+    const newUser = {
+      // userId: uuidv4(),
+      user_email: email,
+      user_phone: phone,
+      user_language: language,
+      user_firstName: firstname,
+      user_lastName: surname, 
+      user_markedSafe: false
+    }
+     axios.post('https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/', newUser)
+      .then(
+        //If the request is successful, get the task id and add it to the new task object
+        (response) => {
+          newUser.userId = response.data.user[0].userId;
+          console.log(newUser);
+          const updatedUsers_reg = [...users, newUser];
+          setUsers(updatedUsers_reg);
+          console.log(users);
+        }
+      )
+      .catch(error => {
+        console.log('Error adding a task', error)
+      })
+  }
+  //end of UserReg post
+
 
   function logInUser(text) {
       //check the email address in the box is one in the database
@@ -153,7 +152,11 @@ If the function is WITHIN that component you do not need to pass it in as {notne
         {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
         <div><NavBar /></div>
         <Switch>
-          <Route path="/UserReg" component={UserReg} />
+          <Route path="/UserReg" render= {props => (<UserReg 
+            {...props} 
+            users={users}
+            addUser={addUser} />
+             )} /> 
           <Route path="/Login" render= {props => (<Login 
             {...props} 
             users={users}

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { Fragment, useState, useEffect } from 'react';
 import Bootbox from 'bootbox-react';
 
 import './UserReg.css';
@@ -36,7 +35,7 @@ function UserReg(props) {
     }
 
     function handleAddUserClick() {
-        props.newUser(user_firstName, user_lastName, user_email, user_phone, user_language);
+        props.addUser(user_firstName, user_lastName, user_email, user_phone, user_language);
     }
 
 
@@ -54,6 +53,7 @@ function UserReg(props) {
         console.log('reg button pressed');
         // window.open("/","_self") 
         setShowAlert_userReg(true);
+        handleAddUserClick();
     }
  
     return (
@@ -64,29 +64,65 @@ function UserReg(props) {
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" className="form-control" id="exampleInputForName" placeholder="First Name" />
+                        <input 
+                        type="name" 
+                        className="form-control" 
+                        id="exampleInputForName" 
+                        placeholder="First Name"
+                        onChange={handleFirstname}
+                        value={user_firstName} />
                     </div>
                     <div className="col-12 col-md-6 col-md-offset-2 form-group" align="center">
-                        <input type="name" className="form-control" id="exampleInputForName" placeholder="Surname" />
+                        <input 
+                        type="name" 
+                        className="form-control" 
+                        id="exampleInputForName" 
+                        placeholder="Surname"
+                        onChange={handleSurname}
+                        value={user_lastName} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 form-group">
-                        <input type="email" className="form-control" id="email" placeholder="Email: name@example.com" />
+                        <input 
+                        type="email" 
+                        className="form-control" 
+                        id="email" 
+                        placeholder="Email: name@example.com"
+                        onChange={handleUser_emailChange}
+                        value={user_email} />
                     </div>
                     <div className="col-12 col-md-6 form-group">
-                        <input type="phone" className="form-control" id="phone" placeholder="Phone: (+44)101 110 1010" />
+                        <input 
+                        type="phone" 
+                        className="form-control" 
+                        id="phone" 
+                        placeholder="Phone: (+44)101 110 1010"
+                        onChange={handlePhoneChange}
+                        value={user_phone} />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 form-group">
-                        <input type="date" className="form-control" id="dob" placeholder="D.O.B" />
+                        <input 
+                        type="date" 
+                        className="form-control" 
+                        id="dob" 
+                        placeholder="D.O.B"
+                         />
                     </div>
                     <div className="col-12 col-md-6 input-group mb-3">
                         <div className="input-group-prepend">
-                            <label className="input-group-text" htmlFor="inputGroupSelect01">Language</label>
+                            <label 
+                            className="input-group-text" 
+                            htmlFor="inputGroupSelect01"
+                            >Language</label>
                         </div>
-                        <select className="custom-select" id="inputGroupSelect01">
+                        <select 
+                        className="custom-select" 
+                        id="inputGroupSelect01"
+                        onChange={handleLanguage}
+                        value={user_language}>
                             <option value="Afrikaans">Afrikaans</option>
                             <option value="Albanian">Albanian</option>
                             <option value="Arabic">Arabic</option>
