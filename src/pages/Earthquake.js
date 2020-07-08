@@ -159,10 +159,15 @@ function Earthquake(props) {
         const deletedUser = usersInDanger.filter(user => user.userID === id);
         setUsersInDanger(updatedUsers_forDelete);
         console.log(deletedUser[0].userID);
-        props.markSafe(deletedUser[0].userID);
+        props.markSafe(deletedUser[0].userID); 
     }
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
+
+    //making the USER IS SAFE button affect the database
+    //need a button to do the delete function and the cc mark safe.  
+
+
 
     return (
         <div className="container earthquake-all">
@@ -201,7 +206,8 @@ we then make a map of the info in this state and return only the bits of the sta
                                 {person.user_phone}
                             </div>
                             <button
-                                onClick={() => deleteUser(person.userID)} //this passes the person.userId into deleteUser here so it is inside the scope of this filter.  NO need for handleclick then.
+                                onClick={() => deleteUser(person.userID)}
+                                //this passes the person.userId into deleteUser here so it is inside the scope of this filter.  NO need for handleclick then.
                                 className="testBtn btn btn-danger btn-xs col-4 col-md-2"
                             > USER IS SAFE
                                     </button>
