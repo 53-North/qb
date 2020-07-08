@@ -20,7 +20,7 @@ function About() {
                 </h3>
             </div>
             <div className="about-illo"> 
-                <div className="row illo_listen">
+                <div className="row illo_listen illo-row">
                     <div className="col-7 listen-text">
                         <p>We're constantly listening to earthquake data from <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener noreferrer">USGS </a>
                         and monitoring when a potentially harmful quake could happen.</p>
@@ -29,7 +29,7 @@ function About() {
                         <img src={listen} alt="ear illustration" />
                     </div>
                 </div>
-                <div className="row illo_quake">
+                <div className="row illo_quake illo-row">
                     <div className="col-5 quake-png">
                         <img src={quake} alt="house damaged by earthquake" />
                     </div>
@@ -38,7 +38,7 @@ function About() {
                             This aids them in their search for survivors.</p>
                     </div>
                 </div>
-                <div className="row illo_notif">
+                <div className="row illo_notif illo-row">
                     <div className="col-7 notif-text">
                         <p>You then get a notification asking if you're safe. A button press is all that's needed to reply.</p>
                     </div>
@@ -46,7 +46,7 @@ function About() {
                         <img src={notif} alt="bell illustration for notification" />
                     </div>
                 </div>
-                <div className="row illo_safe">
+                <div className="row illo_safe illo-row">
                     <div className="col-5 safe-png">
                         <img src={safe} alt="shield with tick" />
                     </div>
@@ -54,7 +54,7 @@ function About() {
                         <p>If you are safe and unharmed you are taken out of the rescue database. You dont need to do anything else.</p>
                     </div>
                 </div>
-                <div className="row illo_not-safe">
+                <div className="row illo_not-safe illo-row">
                     <div className="col-7 not-safe-text">
                         <p>If we haven't heard from you you're already in the database as someone that needs help.
                              Our call centre will try and contact you to double check.</p>
@@ -63,7 +63,7 @@ function About() {
                         <img src={unsafe} alt="shield with cross" />
                     </div>
                 </div>
-                <div className="row illo_search">
+                <div className="row illo_search illo-row">
                     <div className="col-5 search-png">
                         <img src={search} alt="magnifying glass" />
                     </div>
@@ -73,7 +73,7 @@ function About() {
                         </p>
                     </div>
                 </div>
-                <div className="row illo_success">
+                <div className="row illo_success illo-row">
                     <div className="col-7 success-text">
                         <p>By automatically adding you to our search database,
                         it takes away the need to call the emergency services when a disaster heppens.
@@ -83,7 +83,7 @@ function About() {
                         <img src={success} alt="thumbs up" />
                     </div>
                 </div>
-                <div className="row illo_signup">
+                <div className="row illo_signup illo-row">
                     <div className="col-5 signup-png">
                         <img src={login} alt="login illustration" />
                     </div>
