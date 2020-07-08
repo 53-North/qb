@@ -28,8 +28,26 @@ function App() {
       });
   }, []);
 
+  let id;
+
+  function logInUser(text) {
+      //check the email address in the box is one in the database
+      //get all the email addresses in an array
+      //then loop through the array and check for a match
+      //if so...
+      // let idToUse =0;
+      for (let i = 0; i < users.length; i++) {
+        // console.log(users[i]);
+        if (users[i].user_email === text) {
+          id = users[i].userID;
+          // console.log(text + " valid email address");
+          console.log(`This user's ID is : ${id}`);
+          window.open("/UserSafe/","_self") 
+        }              
+      }
+    }
+
   function startQuake() {
-    let id;
     console.log('quake notification received');
     const updatedUsers = users.map(user => {
       //user.user_inDangerZone = 1;
@@ -102,15 +120,17 @@ If the function is WITHIN that component you do not need to pass it in as {notne
         {/* switch is a router thing, that says only DISPLAY in the browser, the page that matches the specified URL else more than one page will show at the same time */}
         <div><NavBar /></div>
         <Switch>
+          <Route path="/UserReg" component={UserReg} />
           <Route path="/Login" render= {props => (<Login 
             {...props} 
-            users={users} />
+            users={users}
+            logInUser={logInUser} />
              )} />
-          <Route path="/UserReg" component={UserReg} />
           <Route path="/UserSafe" render={props => (<UserSafe 
             {...props} 
             users={users} 
-            markSafe={markSafe} />
+            markSafe={markSafe}
+            id={id} />
             )} />
           <Route path="/" component={About} exact/> 
           <Route path="/Settings" component={Settings} />

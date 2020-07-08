@@ -8,7 +8,8 @@ import Bootbox from 'bootbox-react';
 
 function UserSafe(props) {
 
-    console.log(props.users);
+    //console.log(props.users);
+    console.log(props.id);
 
     function handleMarkSafe() {
         props.markSafe();

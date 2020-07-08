@@ -7,7 +7,7 @@ import './Login.css';
 
 function Login(props) {
     const [text, setText] = useState("");
-    console.log(props.users);
+    // console.log(props.users);
 
     function handleTextChange(event) {
         console.log(event.target.value);
@@ -22,22 +22,22 @@ function Login(props) {
 
     const linkTRY = <Link to="/UserSafe"></Link>;
 
-    function logInUser(text) {
-        //check the email address in the box is one in the database
-        //get all the email addresses in an array
-        //then loop through the array and check for a match
-        //if so...
-        // let idToUse =0;
-        for (let i = 0; i < myUsers.length; i++) {
-            if (myUsers[i].myEmail === text) {
-                // console.log(users[i].phone);
-                console.log(text + " valid email address");
-                window.open("/UserSafe/");
-                // return <Link to="/UserSafe"></Link>;
-            }    
+    // function logInUser(text) {
+    //     //check the email address in the box is one in the database
+    //     //get all the email addresses in an array
+    //     //then loop through the array and check for a match
+    //     //if so...
+    //     // let idToUse =0;
+    //     for (let i = 0; i < myUsers.length; i++) {
+    //         if (myUsers[i].myEmail === text) {
+    //             // console.log(users[i].phone);
+    //             console.log(text + " valid email address");
+    //             window.open("/UserSafe/","_self") 
+    //         }    
             
-        }
-    }
+    //     }
+    // }
+
 
     function logInClick(event) {
         //check the email address in the box is one in the database
@@ -57,8 +57,8 @@ function Login(props) {
         // .catch(err => {
         //     console.log("Could not fetch users", err);
         // });
-        console.log(text)
-        logInUser(text);
+        // console.log(text)
+        props.logInUser(text);
 
     }
 
