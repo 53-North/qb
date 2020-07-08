@@ -6,6 +6,40 @@ import './UserReg.css';
 
 function UserReg(props) {
 
+    //telling react that some info will be inputted in the reg screen and we need to keep track of and use it.
+    //calling ("") as there may be nothing written in input TODO box yet
+    const [user_email, setUser_email] = useState("");
+    const [user_phone, setUser_phone] = useState("");
+    const [user_language, setUser_language] = useState("");
+    const [user_firstName, setUser_firstName] = useState("");
+    const [user_lastName, setUser_lastName] = useState("");
+
+    //onChange is used so everytime the text input field changes react will update this STATE
+    function handleUser_emailChange(event) {
+        setUser_email(event.target.value);
+    }
+
+    function handlePhoneChange(event) {
+        setUser_phone(event.target.value);
+    }
+
+    function handleFirstname(event) {
+        setUser_firstName(event.target.value);
+    }
+
+    function handleSurname(event) {
+        setUser_lastName(event.target.value);
+    }
+
+    function handleLanguage(event) {
+        setUser_language(event.target.value);
+    }
+
+    function handleAddUserClick() {
+        props.newUser(user_firstName, user_lastName, user_email, user_phone, user_language);
+    }
+
+
     //function to make a pop up box
     const [showAlert_userReg, setShowAlert_userReg] = useState(false)
     const handleClose_userReg = () => {

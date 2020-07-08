@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 import './App.css';
 import NavBar from "./pages/NavBar";
@@ -15,6 +16,37 @@ import Test from "./pages/Test";
 
 // FONT FAMILY, font-family: 'Nunito', sans-serif;
 function App() {
+
+  //trying to get UserReg screen to work
+
+  function addUser(firstname, surname, email, phone, language) {
+    //get a copy of the tasks that are aready there, add a new task into this array, update the task state
+    const newUser = {
+      userId: uuidv4(),
+      user_email: email,
+      user_phone: phone,
+      user_language: language,
+      user_firstName: firstname,
+      user_lastName: surname, 
+    }
+
+    axios.post('https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/', newUser)
+      .then(
+        //If the request is successful, get the task id and add it to the new task object
+        (response) => {
+          newUser.userId = response.data.user[0].userId;
+          console.log(newUser);
+          const updatedUsers_reg = [...users, newUser];
+          setUsers(updatedUsers_reg);
+          console.log(users);
+        }
+      )
+      .catch(error => {
+        console.log('Error adding a task', error)
+      })
+  }
+
+  //end of UserReg post
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
