@@ -8,12 +8,6 @@
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
-.about-para {
-    font-family: 'Nunito', sans-serif;
-    padding: 0px 20px 10px 20px;
-    color: black;
-}
-
 p {
     font-size: 0.8em;
     font-weight: 300;
@@ -22,21 +16,30 @@ p {
 }
 
 h3 {
-    font-size: 27px;
+    font-size: 1.5em;
     font-weight: 700;
     margin: 0;
 }
 
 .illustration-credit {
-    align-content: center;
-    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 8px;
+    padding: 30px 0px 0px 0px;
 }
 
 /* CSS for illustrations */
 
+.row {
+    margin: 10px 10px 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
 img {
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
+    opacity: 0.7;
 }
 
 .about-main {
@@ -52,4 +55,37 @@ img {
 .safe-text {
     margin: 0px 0px 0px 0px;
 }
+
+.signup-text {
+    padding: 10px 15px 0px 15px;
+}
+
+.listen-png{
+    padding: 10px 0px 0px 20px;
+}
+
+.quake-png{
+    padding: 20px 0px 0px 25px;
+}
+
+.safe-png{
+    padding: 0px 0px 0px 25px;
+}
+
+.not-safe-png{
+    padding: 15px 0px 0px 20px;
+}
+
+.search-png{
+    padding: 15px 0px 0px 20px;
+}
+
+.success-png{
+    padding: 15px 25px 0px 20px;
+}
+
+.signup-png{
+    padding: 0px 0px 0px 25px;
+}
+
 
