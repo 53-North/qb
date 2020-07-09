@@ -60,19 +60,38 @@
 }
 
 .callCentreScreen-deets {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
     padding: 0px 0px 0px 0px;
     text-align: left;
     font-weight: bold;
 }
 
 .callCentreScreen-phone {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
     text-align: center;
 }
-
 
 h2 {
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
 }
 
+@media (max-width: 767.98px) {
+    .earthquake-warning {
+        margin: 0px 0px 0px 0px;
+    }
+    .callCentreScreen-main {
+        margin: 20px 0px 0px 0px;
+    }
 
+    .callCentreScreen-deets {
+        padding: 0px 0px 5px 0px;
+    }
+
+    .callCentreScreen-phone {
+        text-align: right;
+        padding: 0px 0px 0px 0px;
+    }
+ }

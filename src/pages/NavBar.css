@@ -35,9 +35,7 @@
     background-color: whitesmoke;
 }
 
-
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .logo-title {
         font-size: 1.8em;
         margin-right: 0em;
