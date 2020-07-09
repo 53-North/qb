@@ -10,7 +10,6 @@ function NotFound() {
         <div className="NotFound">
             <img src={logo} alt="Logo" />;
             <p>hit back</p>
-           );
         </div>
     );
 }

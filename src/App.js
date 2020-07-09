@@ -13,6 +13,7 @@ import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Earthquake from "./pages/Earthquake";
 import Test from "./pages/Test";
+import Rescuer from "./pages/Rescuer";
 
 // FONT FAMILY, font-family: 'Nunito', sans-serif;
 function App() {
@@ -174,6 +175,13 @@ If the function is WITHIN that component you do not need to pass it in as {notne
            {/* {...props} is saying go through all the props featured in the component.  
            users={users} says to take all the key value pairs from that state USERS, which is the info from the database */}
           <Route path="/Earthquake" render={props => (<Earthquake 
+              {...props} 
+              users={users} 
+              markSafe={markSafe} 
+              startQuake={startQuake}
+               />
+              )} />
+          <Route path="/Rescuer" render={props => (<Rescuer 
               {...props} 
               users={users} 
               markSafe={markSafe} 
