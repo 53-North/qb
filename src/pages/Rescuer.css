@@ -1,0 +1,77 @@
+.earthquake-all {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.earthquake-warning {
+    text-align: center;
+    margin: 0px 100px 0px 100px;
+}
+
+.earthquake-text-title {
+    font-family: 'Nunito', sans-serif;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+    color: darkslategray;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.earthquake-text-small {
+    font-size: 0.8em;
+    padding: 0px 10px 10px 10px;
+}
+
+.earthquake_button-area {
+    margin: 20px 0px 0px 0px;
+}
+
+.earthquake-button {
+    font-size: 2em;
+}
+
+.callCentreScreen-main {
+    margin: 20px 100px 0px 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.callCenter-row {
+    padding: 10px 0px 10px 0px;
+    border-bottom: slategrey 1px solid;
+}
+
+.callCentreScreen-userId {
+    display: none;
+    text-align: left;
+}
+
+.testBtn {
+    font-size: small;
+    text-align: center;
+}
+
+.callCentreScreen-list {
+    font-family: 'Nunito', sans-serif;
+    padding: 0px 0px 0px 0px;
+}
+
+.callCentreScreen-deets {
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.callCentreScreen-phone {
+    text-align: center;
+}
+
+
+h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
