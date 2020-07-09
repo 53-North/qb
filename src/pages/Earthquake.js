@@ -149,6 +149,13 @@ function Earthquake(props) {
         props.startQuake();
         toCall();
         setShowAlert_earthquake(true);
+        // to remove the button from top of screen after pressed
+        const x = document.getElementById("hideMe");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
     }
 
     // delete button 
@@ -159,7 +166,7 @@ function Earthquake(props) {
         const deletedUser = usersInDanger.filter(user => user.userID === id);
         setUsersInDanger(updatedUsers_forDelete);
         console.log(deletedUser[0].userID);
-        props.markSafe(deletedUser[0].userID); 
+        props.markSafe(deletedUser[0].userID);
     }
     //if it return TRUE it keeps it, if false it removes it
     // then update the STATE which is the usersInDanger.
@@ -167,49 +174,52 @@ function Earthquake(props) {
     //making the USER IS SAFE button affect the database
     //need a button to do the delete function and the cc mark safe.  
 
-
-
     return (
         <div className="container earthquake-all">
-            <div className="earthquake-text">
-                <h2 >Potentially Unsafe Users</h2>
-                <div className="earthquake_button text-center">
+            <div id="hideMe" className="row earthquake-warning">
+                <div className="earthquake-text-title col-12 col-md-7">
+                    <h2>Potentially Unsafe Users</h2>
+                    <div className="earthquake-text-small">
+                        <h3>Press the button when an earthquake happens.
+                        This will generate a list of users who are in danger.
+                        </h3>
+                    </div>
+                </div>
+                <div className="earthquake_button-area col-12 col-md-5">
                     <button
-                        className="btn btn-danger btn-block"
+                        className="btn btn-danger earthquake-button"
                         onClick={handleEarthquakeClick}>
-                        Press this button when there is an earthquake
+                        Press Here
                     </button>
                 </div>
-                <div className="earthquake-alert">
-                    <Bootbox show={showAlert_earthquake}
-                        type={"alert"}
-                        message={"An earthquake has been triggered. All users are marked as not safe."}
-                        onClose={handleClose_earthquake} />
-                </div>
             </div>
-
-
+            <div className="earthquake-alert">
+                <Bootbox show={showAlert_earthquake}
+                    type={"alert"}
+                    message={"An earthquake has been triggered. All users are marked as not safe."}
+                    onClose={handleClose_earthquake} />
+            </div>
             <div className="callCentreScreen-main">
                 {/* the usersInDanger state should now be populated with the result of the toCall function and have a list of unsafe users
 we then make a map of the info in this state and return only the bits of the state required for this screen  */}
 
                 {usersInDanger.map(person =>
-                    <div className="callCentreScreen-list-big" >
-                        <div className="row callCenterList">
+                    <div className="container callCentreScreen-list-big" >
+                        <div className="row callCenter-row">
                             <div className="callCentreScreen-userId col-0 col-md-0">
                                 {person.userID}
                             </div>
                             <div className="callCentreScreen-deets col-4 col-md-2">
                                 {person.user_firstName}
                             </div>
-                            <div className="callCentreScreen-phone col-4 col-md-8">
+                            <div className="callCentreScreen-phone col-8 col-md-8">
                                 {person.user_phone}
                             </div>
                             <button
                                 onClick={() => deleteUser(person.userID)}
                                 //this passes the person.userId into deleteUser here so it is inside the scope of this filter.  NO need for handleclick then.
-                                className="testBtn btn btn-danger btn-xs col-4 col-md-2"
-                            > USER IS SAFE
+                                className="testBtn btn btn-danger btn-xs col-12 col-md-2"
+                            > SAFE
                                     </button>
 
                         </div>
