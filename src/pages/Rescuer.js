@@ -124,7 +124,6 @@ function Rescuer(props) {
                 )}
             </div>
         </div>
-
     )
 }
 

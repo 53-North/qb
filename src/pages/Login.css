@@ -54,3 +54,13 @@ h6 {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
 }
+
+@media (min-width: 768px) {
+    .login-forms {
+        margin: 0px 300px 0px 300px;
+    }
+
+    .login-text {
+        margin: 80px 400px 30px 400px;
+    }
+}
