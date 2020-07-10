@@ -78,6 +78,7 @@ h2 {
     font-weight: 700;
 }
 
+/* size changes for viewing on mobile */
 @media (max-width: 767.98px) {
     .earthquake-warning {
         margin: 0px 0px 0px 0px;
@@ -95,3 +96,5 @@ h2 {
         padding: 0px 0px 0px 0px;
     }
  }
+
+ 

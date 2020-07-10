@@ -9,12 +9,19 @@
     padding: 5px 0px 5px 0px;
 }
 
+.main-centre {
+    text-align: center;
+}
+
+.about-main {
+    display: inline-block;
+}
+
 p {
     font-size: 0.8em;
     font-weight: 300;
     line-height: 1.2em;
     text-align: left;
-    margin: 10px 0px 0px 0px;
 }
 
 h3 {
@@ -33,14 +40,10 @@ h3 {
 /* CSS for illustrations */
 
 img {
+    display: inline-block;
     height: 80px;
     width: 80px;
-    opacity: 0.7;
-}
-
-.about-main {
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    filter: invert(70%) sepia(89%) saturate(359%) hue-rotate(357deg) brightness(106%) contrast(90%);
 }
 
 .illo-row {
@@ -50,45 +53,63 @@ img {
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.19);
 }
 
+.illo-text {
+    padding: 10px 10px 10px 10px;
+}
+
 .about-illo {
     padding: 0px 0px 0px 0px;
     margin: 0px 10px 0px 10px;
 }
 
-.safe-text {
-    margin: 0px 0px 0px 0px;
-}
-
-.signup-text {
-    padding: 5px 15px 0px 15px;
-}
-
 .listen-png{
-    padding: 10px 0px 15px 20px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .quake-png{
-    padding: 20px 0px 20px 35px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .safe-png{
-    padding: 10px 0px 10px 35px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .not-safe-png{
-    padding: 15px 0px 10px 20px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .search-png{
-    padding: 15px 0px 10px 30px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .success-png{
-    padding: 15px 20px 15px 20px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
 .signup-png{
-    padding: 0px 0px 0px 35px;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
 }
 
+/* size changes for viewing on widescreen */
+@media (min-width: 768px) {
+    .about-illo {
+        padding: 0px 0px 0px 0px;
+        margin: 0px 150px 0px 150px;
+    }
+
+    .illo-text {
+        padding: 20px 20px 0px 20px;
+    }
+
+    .about-question {
+        margin: 20px 200px 20px 200px; 
+    }
+}
 
