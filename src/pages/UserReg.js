@@ -57,7 +57,7 @@ function UserReg(props) {
     }
 
     return (
-        <div className="UserReg">
+        <div className="container UserReg">
             <div className="register-text">
                 <h3>Register below ...</h3>
             </div>

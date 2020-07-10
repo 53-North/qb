@@ -34,7 +34,7 @@ function Login(props) {
     //             console.log(text + " valid email address");
     //             window.open("/UserSafe/","_self") 
     //         }    
-            
+
     //     }
     // }
 
@@ -69,9 +69,8 @@ function Login(props) {
                     Log in below:
                 </h3>
             </div>
-
             <form>
-                <div className=" form-group">
+                <div className="form-group login-forms">
                     <input type="email"
                         className="form-control"
                         id="exampleInputEmail1"
@@ -94,21 +93,18 @@ function Login(props) {
                 </div>
             </form>
             <div className="button-area text-center">
-                    <button
-                        onClick={logInClick}
-                        type="button"
-                        className="btn btn-primary">
-                        Log in
+                <button
+                    onClick={logInClick}
+                    type="button"
+                    className="btn btn-primary">
+                    Log in
                     </button>
-                
             </div>
-
             <div className="login-footer">
                 <h6>don't have an account? - <a href="/UserReg/">sign up </a> </h6>
                 <h6>forgotten password? - <a href="/UserReg/">click here </a> </h6>
             </div>
         </div>
-
     );
 }
 
