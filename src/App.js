@@ -73,12 +73,51 @@ function App() {
         // console.log(users[i]);
         if (users[i].user_email === text) {
           id = users[i].userID;
-          // console.log(text + " valid email address");
+          console.log(text + " valid email address");
           console.log(`This user's ID is : ${id}`);
-          window.open("/UserSafe/","_self") 
+          updateLoggedInStatus(id);
+          setTimeout(openNewWindow, 500)
         }              
       }
     }
+  
+    function openNewWindow(){
+      window.open("/UserSafe/","_self")
+
+    }
+
+
+  function updateLoggedInStatus(id) {
+    console.log("I have received" + id)
+    const updatedUsers = users.map(user => {
+      user.user_loggedIn = 0;
+      if (user.userID === id) {
+        user.user_loggedIn = 1;
+      }
+      return user;
+    });
+
+    // const updatedUser = users.filter(user => user.userID === id);
+    console.log( updatedUsers );
+    // console.log( updatedUser );
+
+    for (let i = 0; i < updatedUsers.length; i++) {
+      axios
+        .put(
+          `https://15omqaggcl.execute-api.eu-west-2.amazonaws.com/dev/user/${updatedUsers[i].userID}`, updatedUsers[i]
+        )
+        .then(res => {
+          // There is probably no data returned from a Put request.
+          // But if you're in the "then" function you know the request succeeded.
+          console.log(updatedUsers[i].userID + ' logged in');
+          //console.log(updatedUsers[i].user_inDangerZone);
+        })
+        .catch(err => {
+          console.log("Error marking " + updatedUsers[i].userID + " logged in", err);
+        });
+    }
+    setUsers(updatedUsers);
+  }
 
   function startQuake() {
     console.log('quake notification received');
@@ -167,6 +206,7 @@ If the function is WITHIN that component you do not need to pass it in as {notne
             {...props} 
             users={users} 
             markSafe={markSafe}
+            updateLoggedInStatus={updateLoggedInStatus}
             id={id} />
             )} />
           <Route path="/" component={About} exact/> 
