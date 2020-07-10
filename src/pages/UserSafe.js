@@ -7,11 +7,24 @@ import './UserSafe.css';
 
 function UserSafe(props) {
 
-    //console.log(props.users);
-    console.log(props.id);
+    let currentUser;
+    console.log(props.users[0])
+    function findLoggedInUser(){
+        // console.log("Hello")
+        for (let i = 0; i < props.users.length; i++){
+            if (props.users[i].user_loggedIn === 1){
+                currentUser = props.users[i].userID;
+            }
+        }
+    }
+    // props.updateLoggedInStatus();
+    // console.log(props.users);
+
+    findLoggedInUser();
+    console.log(currentUser + " is me!");
 
     function handleMarkSafe() {
-        props.markSafe();
+        props.markSafe(currentUser);
     }
 
     /*
